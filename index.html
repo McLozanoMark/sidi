@@ -1,1039 +1,174 @@
-<html lang="en" translate="no">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="google" content="notranslate">
-    <meta name="description"
-        content="The first CSS framework based on Material Design 3. 10x smaller than others CSS frameworks based on Material Design. Translates Material Design to HTML semantic standard. Ready to use with any JS framework. Highly focused on DX.">
-    <title>SIDI</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/favicon.png">
-    <link rel="manifest" href="/manifest.webmanifest">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/styles/default.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/beer.min.css" rel="stylesheet">
-    <link href="./css/modulos.css" rel="stylesheet">
-    <script type="module"
-        src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/page-js@1.7.3/page.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/beer.min.js"></script>
-    
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0PZF7Z0XQ7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a Sidi</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --body-color: #393937;
+  --accent-color: #03e9f4;
+  --white-color: #fff;
+  --box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 1rem;
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
 
-        gtag('config', 'G-0PZF7Z0XQ7');
-    </script>
-<script src="./js/scripts.js"></script>
-    <script>
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-            h._hjSettings = { hjid: 2265410, hjsv: 6 };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-    <script async="" src="https://static.hotjar.com/c/hotjar-2265410.js?sv=6"></script>
-    <script async="" src="https://script.hotjar.com/modules.a80e23f65c59cd611c5f.js" charset="utf-8"></script>
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-image: url('./images/fondo-start.svg');
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button-animation {
+  position: relative;
+  display: inline-block;
+  padding: 20px 30px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 4px;
+  transition: 0.5s;
+}
+.button-animation span {
+  position: absolute;
+  display: block;
+}
+.button-animation span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-color));
+  animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+.button-animation span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--accent-color));
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+.button-animation span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--accent-color));
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+.button-animation span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--accent-color));
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+.button-animation:hover {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+.nombre{
+    color:white !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4vh;;
+}
+.button-animation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nombre > img{
+ padding-left: 1vh;
+}
+
+  </style>
 </head>
-
-<body class="light">
-    <div id="app" data-v-app="">
-        <div>
-            <nav class="left m l medium-space">
-                <header></header>
-                <button class="fill square round extra" data-ui="#dialog-add"><i>add</i></button>
-                <a data-ui="#modulo-gestion" href="#"class=""><i>watch_later</i>
-                    <div class="tooltip right">Gestión</div>
-                    <span>Gestión</span>
-                </a>
-                <a data-ui="#modulo-educacion" href="#" class=""><i>school</i>
-                    <div class="tooltip right">Educación</div>
-                    <span>Educación</span>
-                </a>
-                <a data-ui="#modulo-recursos" href="#" class=""><i>inbox</i>
-                    <div class="tooltip right">Recursos</div>
-                    <span>Recursos</span>
-                </a>
-                </a><a data-ui="#modulo-reportes" href="#" class=""><i>lab_profile</i>
-                    <div class="tooltip right">Reportes</div>
-                    <span>Reportes</span>
-                </a>
-                <div class="overlay"></div>
-
-            </nav>
-            <nav class="bottom s"><a href="#" data-ui="#modulo-gestion" class="active"><i>watch_later</i>
-                    <div>Gestión</div>
-                </a><a href="#" data-ui="#modulo-educacion"><i>school</i>
-                    <div>Educación</div>
-                </a><a class="button fill square round extra" data-ui="#dialog-add"><i>add</i></a><a
-                    href="#" data-ui="#modulo-recursos" class=""><i>inbox</i>
-                    <div>Recursos</div>
-                </a><a data-ui="#modulo-reportes"><i>lab_profile</i>
-                    <div>Reportes</div>
-                </a>
-                <div class="overlay"></div>
-
-            </nav>
-            <nav class="top"><button class="circle large transparent active" data-ui="#menu-menu"><i>menu</i>
-                    <!--<menu class="no-wrap" id="menu-menu" data-ui="#menu-menu"><a class="row" href="/gmail"><i>inbox</i>
-                            <div class="max">Inboxs</div>
-                        </a><a class="row" href="/gmail/snoozed"><i>watch_later</i>
-                            <div class="max">Snoozed</div>
-                        </a><a class="row" href="/gmail/important"><i>label_important</i>
-                            <div class="max">Important</div>
-                        </a><a class="row" href="/gmail/sent"><i>send</i>
-                            <div class="max">Sent</div>
-                        </a><a class="row" href="/gmail/drafts"><i>insert_drive_file</i>
-                            <div class="max">Drafts</div>
-                        </a><a class="row" href="/gmail/spam"><i>error_outline</i>
-                            <div class="max">Spam</div>
-                        </a><a class="row" data-ui="#themes3"><i>palette</i>
-                            <div class="max">Themes</div>
-                        </a></menu>-->
-                </button><a href="./index.html"><img src="images/logo_sidi.png" style="display: none;"><img src="images/logo_sidi.png"></a>
-                <div class="max"></div>
-                <div class="max"></div>
-                <button class="circle large transparent s"
-                    data-ui="#dialog-search"><i>search</i></button>
-                    <a class="circle large transparent m l" href="./config.html"><i>settings</i>
-                    <!--<menu class="left no-wrap" id="menu-settings" data-ui="#menu-settings"><a>
-                            <div>Account</div><label>Change account</label>
-                        </a><a>
-                            <div>Appearance</div><label>Change display settings</label>
-                        </a>
-                    </menu>-->
-                </a>
-                <!--<button class="circle large transparent m l" data-ui="#menu-apps"><i>apps</i>
-                    <menu class="left padding no-wrap" id="menu-apps" data-ui="#menu-apps">
-                        <div class="grid no-space">
-                            <div class="s4 center-align"><a class="button transparent circle large"
-                                    onclick="mode()"><i>light_mode</i></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/keep.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/tasks.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/contacts.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/favicon.png"></a></div>
-                        </div>
-                    </menu>
-                </button>-->
-                <button class="circle large transparent" data-ui="#menu-user">
-                    <i class="extra">account_circle</i>
-                    <menu class="left no-wrap" id="menu-user" data-ui="#menu-user"><a>
-                            <div>Ajustes</div><label>Actualizar Perfil</label>
-                        </a><a>
-                            <div>Salir</div><label>Cerrar Sesión</label>
-                        </a>
-                    </menu>
-                </button>
-                <div class="overlay"></div>
-
-            </nav>
-            <main class="responsive max">
-                <div class="blur overlay"></div>
-                <dialog class="round large-width" id="dialog-add">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
-                        <h5>Nuevo Grupo</h5>
-                        <div class="max"></div><button class="circle transparent"
-                            data-ui="#dialog-add"><i>attach_file</i></button><button class="circle transparent"
-                            data-ui="#dialog-add"><i>send</i></button>
-                    </nav>
-                    <div class="grid">
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder="Nombre de grupo"><label>Nombre</label></div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder="Posición">
-                                <label>Posición</label>
-                            </div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder="Descripción"><label>Descripción</label>
-                            </div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border textarea"><textarea
-                                    placeholder="Detalles"></textarea><label>Detalles</label></div>
-                        </div>
-                    </div>
-                </dialog>
-                <!--INICIO MODAL GESTIÓN-->
-                <div class="blur overlay"></div>
-                <dialog class="area-de-modulos" id="modulo-gestion">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
-                        <h5><img class="icono-animado" src="./images/pulse.svg"> Gestión</h5>
-                        <div class="max"></div>
-                        <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
-                    </nav>
-                    
-                    <div class="row scroll" style="padding-bottom: 2vh;">
-                        <div class="hidden" id="transitionWindow">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
-                                    </div>
-                                    <hr class="large">
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>Nombre de Reporte</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>URL</label></div>
-                                    </div>
-                                    
-                                    <footer class="fixed" style="padding-top:.7vh;">
-                                        <nav class="right-align"><button class="border"
-                                                data-ui="#dialog-post">Cancel</button><button
-                                                data-ui="#dialog-post">Confirm</button></nav>
-                                    </footer>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Alta Dirección</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Archivo USE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Acompañamiento"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Reporte Ejecutivo</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Infraestructura</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Diagnóstico y brecha</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Archivo USE 2024"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>BI Aprendizaje</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Presupuesto</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Ejecución Presupuestal</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Gestión de Riesgo de desastre"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Gestión de riesgo</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Configuración</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Archivo USE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="">
-                                            <div class="max wrap">
-                                                <div>"Archivo USE 2024"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>BI Aprendizaje</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </dialog>
-                <!--FIN MODAL GESTIÓN-->
-                <!--INICIO MODAL EDUCACIÓN-->
-                <div class="blur overlay"></div>
-                <dialog class="area-de-modulos" id="modulo-educacion">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
-                        <h5><img class="icono-animado" src="./images/pulse.svg"> Educación</h5>
-                        <div class="max"></div>
-                        <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
-                    </nav>
-                    <div class="row scroll" style="padding-bottom: 2vh;">
-                        <div class="hidden" id="transitionWindow">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
-                                    </div>
-                                    <hr class="large">
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>Nombre de Reporte</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>URL</label></div>
-                                    </div>
-                                    
-                                    <footer class="fixed" style="padding-top:.7vh;">
-                                        <nav class="right-align"><button class="border"
-                                                data-ui="#dialog-post">Cancel</button><button
-                                                data-ui="#dialog-post">Confirm</button></nav>
-                                    </footer>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Estudiantes</b>
-                                            <div>Educación</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Reinsersión y continuidad</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Matrícula 2022</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Reinsersión y continuidad 2023</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Convivencia</b>
-                                            <div>Educación</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Portal SISEVE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Convivencia Escolar 2016-2019"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Aprende Saludable 2017-2019</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Acciones Formativas</b>
-                                            <div>Educación</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>PEM Formación 2021</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Formación CBD - DOC 2021</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>WEBINARS 2021</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Acompañamiento</b>
-                                            <div>Educación</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>COAR 2023</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Acompañamiento Pedagógico 2017-2023</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Acompañamiento</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </dialog>
-                <!--FIN MODAL EDUCACIÓN-->
-                <!--INICIO MODAL RECURSOS-->
-                <div class="blur overlay"></div>
-                <dialog class="area-de-modulos" id="modulo-recursos">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
-                        <h5><img class="icono-animado" src="./images/pulse.svg"> Recursos</h5>
-                        <div class="max"></div>
-                        <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
-                    </nav>
-                    <div class="row scroll">
-                        <div class="hidden" id="transitionWindow">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
-                                    </div>
-                                    <hr class="large">
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>Nombre de Reporte</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>URL</label></div>
-                                    </div>
-                                    
-                                    <footer class="fixed" style="padding-top:.7vh;">
-                                        <nav class="right-align"><button class="border"
-                                                data-ui="#dialog-post">Cancel</button><button
-                                                data-ui="#dialog-post">Confirm</button></nav>
-                                    </footer>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Servicios</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Archivo USE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Archivo USE 2024"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>BI Aprendizaje</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Histórico</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Archivo USE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Archivo USE 2024"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>BI Aprendizaje</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Herramientas</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Archivo USE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Archivo USE 2024"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>BI Aprendizaje</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a>
-                                    </nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Aprendo en Casa</b>
-                                            <div>Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Archivo USE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Archivo USE 2024"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>BI Aprendizaje</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </dialog>
-                <!--FIN MODAL RECURSOS-->
-                <!--INICIO MODAL REPORTES-->
-                <div class="blur overlay"></div>
-                <dialog class="area-de-modulos" id="modulo-reportes">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
-                        <h5><img class="icono-animado" src="./images/pulse.svg"> Reportes</h5>
-                        <div class="max"></div>
-                        <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
-                    </nav>
-                    <div class="row scroll">
-                        <div class="hidden" id="transitionWindow">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
-                                    </div>
-                                    <hr class="large">
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>Nombre de Reporte</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>URL</label></div>
-                                    </div>
-                                    
-                                    <footer class="fixed" style="padding-top:.7vh;">
-                                        <nav class="right-align"><button class="border"
-                                                data-ui="#dialog-post">Cancel</button><button
-                                                data-ui="#dialog-post">Confirm</button></nav>
-                                    </footer>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Semáforo</b>
-                                            <div>Reportes</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Semáforo Escuela remoto 2021</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Semáforo Escuela Remoto 2022</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Semáforo Escuela 2019</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Historico</b>
-                                            <div>Reportes</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding tarjetacontenidomenu"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Visualización del Reporte</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Alertas</b>
-                                            <div>Reportes</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding tarjetacontenidomenu"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Registrar Alertas</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Reportes</b>
-                                            <div>Reportes</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Archivo USE</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>"Archivo USE 2024"</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>BI Aprendizaje</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row"><i>check</i>
-                                        <div><b>Base</b>
-                                            <div>Reportes</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Histórico</div><label class="grey-text">3 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>herramientas USE</div><label class="grey-text">40 Vistas</label>
-                                            </div>
-                                        </a><a class="small-round" href="./ver.html">
-                                            <div class="max wrap">
-                                                <div>Contratación</div><label class="grey-text">12 Vistas</label>
-                                            </div>
-                                        </a></nav>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </dialog>
-                <!--FIN MODAL REPORTES-->
-                <!--<dialog class="round large-width" id="modulo-gestion">
-                    
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
-                        <h5>Nuevo Gestión</h5>
-                        <div class="max"></div><button class="circle transparent"
-                            data-ui="#dialog-add"><i>attach_file</i></button><button class="circle transparent"
-                            data-ui="#dialog-add"><i>send</i></button>
-                    </nav>
-                    <div class="grid">
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder=" "><label>From</label></div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder=" "><label>To</label></div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder=" "><label>Subject</label>
-                            </div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border textarea"><textarea
-                                    placeholder=" "></textarea><label>Message</label></div>
-                        </div>
-                    </div>
-                </dialog>-->
-                <div class="overlay"></div>
-                <dialog class="top-round bottom" id="dialog-add-small">
-                    <nav><button class="circle transparent" data-ui="#dialog-add-small"><i>arrow_back</i></button>
-                        <h5>New mail</h5>
-                        <div class="max"></div><button class="circle transparent"
-                            data-ui="#dialog-add-small"><i>attach_file</i></button><button class="circle transparent"
-                            data-ui="#dialog-add-small"><i>send</i></button>
-                    </nav>
-                    <div class="grid">
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder=" "><label>From</label></div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder=" "><label>To</label></div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border"><input type="text" placeholder=" "><label>Subject</label>
-                            </div>
-                        </div>
-                        <div class="s12">
-                            <div class="field label border textarea"><textarea
-                                    placeholder=" "></textarea><label>Message</label></div>
-                        </div>
-                    </div>
-                </dialog>
-                <div class="overlay"></div>
-                <dialog class="top transparent" id="dialog-search">
-                    <nav>
-                        <div class="max m l"></div>
-                        <div class="max field round suffix prefix small no-margin white black-text"><i
-                                class="front">search</i><input type="text" placeholder=" "><i class="front">mic</i>
-                        </div>
-                        <div class="max m l"></div>
-                    </nav>
-                </dialog>
-                <!--CONTENT-->
-                <div class="page right active">
-                    
-                   <div class="large-space"></div>
-                    <section class="responsive page left active">
-                        <div class="carousel">
-                            <div class="carousel-images">
-                                <img src="./images/2.webp" alt="Imagen 2">
-                                <img src="./images/3.webp" alt="Imagen 3">
-                                <img src="./images/4.webp" alt="Imagen 4">
-                            </div>
-                            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-                            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-                        </div>
-                        
-                        <div class="large-space"></div>
-                        <!--<article class="no-elevate round no-padding large page bottom active" style="height:20vh;">
-                            <img class="responsive" src="./images/SIDIPORTADA.webp">
-                            <div class="absolute middle center center-align black-text">
-                                <h1 class="center-align">SIDI</h1>
-                                <h6>Template</h6>
-                                <nav class="center-align"><button class="extra">Get started</button></nav>
-                            </div>
-                        </article>-->
-                        <div class="field large prefix round fill active">
-                            <i class="front">search</i>
-                            <input placeholder="¿Qué estas buscando?">
-                            <menu class="min">
-                                <div class="field large prefix suffix no-margin fixed">
-                                    <i class="front">arrow_back</i>
-                                    <input>
-                                    <i class="front">close</i>
-                                </div>
-                                <a class="row" href="./ver.html">
-                                    <i>history</i>
-                                    <div>PEM Formación 2021</div>
-                                </a>
-                                <a class="row" href="./ver.html">
-                                    <i>history</i>
-                                    <div>FOrmación CBD - 2021</div>
-                                </a>
-                                <a class="row" href="./ver.html">
-                                    <i>history</i>
-                                    <div>Formación 2022</div>
-                                </a>
-                            </menu>
-                        </div>
-                        <div class="large-space"></div>
-                        <h2>Visto Recientemente</h2>
-                        <div class="space"></div>
-                        <div class="grid">
-                            <div class="s12 m6 l3">
-                                <a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/cursosnodoce.png">
-                                        <div class="large-padding">
-                                            <h6>Cursos No Doc..</h6>
-                                            <p>Acciones Formativas</p>
-                                        </div>
-                                    </article>
-                                </a>
-                            </div>
-                            <div class="s12 m6 l3">
-                                <a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/webinars2021.png">
-                                        <div class="large-padding">
-                                            <h6>Webinars 2021</h6>
-                                            <p>Acciones Formativas</p>
-                                        </div>
-                                    </article>
-                                </a>
-                            </div>
-                            <div class="s12 m6 l3">
-                                <a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/cursosprogramas2021.png">
-                                        <div class="large-padding">
-                                            <h6>Cursos/Programas</h6>
-                                            <p>Acciones Formativas</p>
-                                        </div>
-                                    </article>
-                                </a>
-                            </div>
-                            <div class="s12 m6 l3">
-                                <a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/FORMACIONCBD.png">
-                                        <div class="large-padding">
-                                            <h6>Formación CBD 2021</h6>
-                                            <p>Acciones Formativas</p>
-                                        </div>
-                                    </article>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="large-space"></div>
-                        <div class="large-space"></div>
-                        <h2>Enlaces Externos</h2>
-                        <div class="space"></div>
-                        <div class="grid">
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/ESCALE.jpg">
-                                        <div class="large-padding">
-                                            <h6>ESCALE</h6>
-                                            <p>Programa MINEDU</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/SIGIED.jpg">
-                                        <div class="large-padding">
-                                            <h6>SIGIED</h6>
-                                            <p>Sistema de gestión de información educativa</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/SiseVe.jpg">
-                                        <div class="large-padding">
-                                            <h6>SiseVe</h6>
-                                            <p>Contra la Violencia Familiar</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/Sigma.jpg">
-                                        <div class="large-padding">
-                                            <h6>Sigma</h6>
-                                            <p>Segunda Versión
-                                            </p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/EducacionAmbiental.jpg">
-                                        <div class="large-padding">
-                                            <h6>Educación Ambiental</h6>
-                                            <p>Programa MINEDU</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/SemaforoEscuela.jpg">
-                                        <div class="large-padding">
-                                            <h6>Semaforo Escuela</h6>
-                                            <p>Programa MINEDU</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                        </div>
-                        <div class="large-space"></div>
-                        <!--<div class="large-space"></div>
-                        <h2>Resources</h2>
-                        <div class="grid">
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Material blog</h6>
-                                        <p>News, tutorials, and inspiration from the Material team</p>
-                                    </article>
-                                </a></div>
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Figma design kit</h6>
-                                        <p>Customizable styles and components to help you design with Material 3</p>
-                                    </article>
-                                </a></div>
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Get started</h6>
-                                        <p>Guides, videos, and tools to start building with Material</p>
-                                    </article>
-                                </a></div>
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Develop</h6>
-                                        <p>Code and developer documentation for Android, Flutter, and the Web</p>
-                                    </article>
-                                </a></div>
-                        </div>
-                        <div class="large-space"></div>
-                        <div class="large-space"></div>
-                        <hr>
-                        <div class="large-space"></div>
-                        <div class="grid">
-                            <div class="s12 l6"><svg class="medium" viewBox="0 0 24 24">
-                                    <path
-                                        d="M21,12C21,9.97 20.33,8.09 19,6.38V17.63C20.33,15.97 21,14.09 21,12M17.63,19H6.38C7.06,19.55 7.95,20 9.05,20.41C10.14,20.8 11.13,21 12,21C12.88,21 13.86,20.8 14.95,20.41C16.05,20 16.94,19.55 17.63,19M11,17L7,9V17H11M17,9L13,17H17V9M12,14.53L15.75,7H8.25L12,14.53M17.63,5C15.97,3.67 14.09,3 12,3C9.91,3 8.03,3.67 6.38,5H17.63M5,17.63V6.38C3.67,8.09 3,9.97 3,12C3,14.09 3.67,15.97 5,17.63M23,12C23,15.03 21.94,17.63 19.78,19.78C17.63,21.94 15.03,23 12,23C8.97,23 6.38,21.94 4.22,19.78C2.06,17.63 1,15.03 1,12C1,8.97 2.06,6.38 4.22,4.22C6.38,2.06 8.97,1 12,1C15.03,1 17.63,2.06 19.78,4.22C21.94,6.38 23,8.97 23,12Z">
-                                    </path>
-                                </svg>
-                                <p>SIDI es un sistema de gestión de datos estudiantiles del Ministerio de Educación, que
-                                    organiza y facilita la recolección de información sobre los estudiantes. Con su
-                                    plataforma digital, SIDI mejora la toma de decisiones en educación, permitiendo un
-                                    acceso rápido y eficiente a los datos clave de los alumnos.</p>
-                            </div>
-                            <div class="s12 l6">
-                                <div class="grid large-line">
-                                    <div class="s4">
-                                        <p class="bold">Social</p>
-                                        <p><a class="link">GitHub</a></p>
-                                        <p><a class="link">Twitter</a></p>
-                                        <p><a class="link">Youtube</a></p>
-                                        <p><a class="link">Blog RSS</a></p>
-                                    </div>
-                                    <div class="s4">
-                                        <p class="bold">Libraries</p>
-                                        <p><a class="link">Android</a></p>
-                                        <p><a class="link">Compose</a></p>
-                                        <p><a class="link">Flutter</a></p>
-                                        <p><a class="link">Web</a></p>
-                                    </div>
-                                    <div class="s4">
-                                        <p class="bold">Archived versions</p>
-                                        <p><a class="link">Material Design 1</a></p>
-                                        <p><a class="link">Material Design 2</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>-->
-                        <div class="large-space"></div>
-                        <div class="row large-space wrap">SIDI 2025 - MINEDU</div>
-                    </section>
-                </div>
-            </main>
-        </div>
-    </div>
-    <script src="/__/firebase/8.2.9/firebase-app.js"></script>
-    <script src="/__/firebase/8.2.9/firebase-analytics.js"></script>
-    <script src="/__/firebase/init.js"></script>
-    <script type="module" src="/app.js"></script>
-    <script>
-        const theme = async (from) => {
-            await ui("theme", from);
-        };
-
-        const mode = () => {
-            let newMode = ui("mode") == "dark" ? "light" : "dark";
-            ui("mode", newMode);
-        }
-
-    </script>
-    <script>
-        const toggleButton = document.getElementById('toggleWindowButton');
-        const transitionWindow = document.getElementById('transitionWindow');
-
-        toggleButton.addEventListener('click', () => {
-            if (transitionWindow.classList.contains('hidden')) {
-                transitionWindow.classList.remove('hidden');
-                transitionWindow.classList.add('fade-in');
-            } else {
-                transitionWindow.classList.remove('fade-in');
-                transitionWindow.classList.add('hidden');
-            }
-        });
-    </script>
-   
-    
-
+<body>
+  <div class="container">
+    <h1 class="nombre">Bienvenido a <img src="./images/logo_sidi_w.png"></h1>
+    <a class="box__link button-animation" href="./start.html">
+        Ingresar
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+  </div>
 </body>
-
 </html>
