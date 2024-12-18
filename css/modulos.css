@@ -148,6 +148,12 @@
   .tarjetacontenidomenu{
     height:22.5vh !important;
   }
+  .menubutton {
+    display: none;
+  }
+  nav.top > a.logo{
+    align-items: baseline;
+  }
 
   /* Estilos específicos para TABLETS (pantallas de 768px a 1024px) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -172,7 +178,7 @@
     font-size: .7rem !important;
     margin-top:0;
   }
-  nav.top > button {
+  .menubutton {
     display: none;
   }
   nav.top > a.logo{
@@ -198,4 +204,11 @@
   overflow: hidden; /* Oculta el texto que se desborda */
   text-overflow: ellipsis; /* Agrega "..." al final */
   box-sizing: border-box; /* Asegura que padding y border no afecten el ancho */
+}
+
+.sombra-1{
+  box-shadow: var(--elevate1);
+}
+.sombra-2{
+  box-shadow: var(--elevate2);
 }
