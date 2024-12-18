@@ -178,17 +178,24 @@
   nav.top > a.logo{
     align-items: baseline;
   }
-  .recortar-texto {
-    width: 100%; /* Ocupa el 100% del ancho del contenedor */
-    white-space: nowrap; /* Evita que el texto pase a otra línea */
-    overflow: hidden; /* Oculta el texto que se desborda */
-    text-overflow: ellipsis; /* Agrega "..." al final */
-    box-sizing: border-box; /* Asegura que padding y border no afecten el ancho */
-}
 .s6 > a.wave{
   box-shadow: var(--elevate1) !important;
 }
+}
+.small-round{
+  flex-direction: row !important;
+  align-items: center !important; 
+  justify-content: flex-start !important;
+}
 
+.small-round > img {
+  margin-right: 1rem;
+}
 
-
+.recortar-texto {
+  width: 100%; /* Ocupa el 100% del ancho del contenedor */
+  white-space: nowrap; /* Evita que el texto pase a otra línea */
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Agrega "..." al final */
+  box-sizing: border-box; /* Asegura que padding y border no afecten el ancho */
 }
