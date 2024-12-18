@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/page-js@1.7.3/page.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/beer.min.js"></script>
-    
+
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0PZF7Z0XQ7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -30,7 +30,7 @@
 
         gtag('config', 'G-0PZF7Z0XQ7');
     </script>
-<script src="./js/scripts.js"></script>
+    <script src="./js/scripts.js"></script>
     <script>
         (function (h, o, t, j, a, r) {
             h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
@@ -51,7 +51,7 @@
             <nav class="left m l medium-space">
                 <header></header>
                 <button class="fill square round extra" data-ui="#dialog-add"><i>add</i></button>
-                <a data-ui="#modulo-gestion" href="#"class=""><i>watch_later</i>
+                <a data-ui="#modulo-gestion" href="#" class=""><i>watch_later</i>
                     <div class="tooltip right">Gestión</div>
                     <span>Gestión</span>
                 </a>
@@ -74,8 +74,8 @@
                     <div>Gestión</div>
                 </a><a href="#" data-ui="#modulo-educacion"><i>school</i>
                     <div>Educación</div>
-                </a><a class="button fill square round extra" data-ui="#dialog-add"><i>add</i></a><a
-                    href="#" data-ui="#modulo-recursos" class=""><i>inbox</i>
+                </a><a class="button fill square round extra" data-ui="#dialog-add"><i>add</i></a><a href="#"
+                    data-ui="#modulo-recursos" class=""><i>inbox</i>
                     <div>Recursos</div>
                 </a><a data-ui="#modulo-reportes"><i>lab_profile</i>
                     <div>Reportes</div>
@@ -99,12 +99,12 @@
                         </a><a class="row" data-ui="#themes3"><i>palette</i>
                             <div class="max">Themes</div>
                         </a></menu>-->
-                </button><a href="./index.html"><img src="images/logo_sidi.png" style="display: none;"><img src="images/logo_sidi.png"></a>
+                </button><a href="./index.html" class="logo"><img src="images/logo_sidi.png" style="display: none;"><img
+                        src="images/logo_sidi.png"></a>
                 <div class="max"></div>
                 <div class="max"></div>
-                <button class="circle large transparent s"
-                    data-ui="#dialog-search"><i>search</i></button>
-                    <a class="circle large transparent m l" href="./config.html"><i>settings</i>
+                <button class="circle large transparent s" data-ui="#dialog-search"><i>search</i></button>
+                <a class="circle large transparent m l" href="./config.html"><i>settings</i>
                     <!--<menu class="left no-wrap" id="menu-settings" data-ui="#menu-settings"><a>
                             <div>Account</div><label>Change account</label>
                         </a><a>
@@ -128,6 +128,28 @@
                         </div>
                     </menu>
                 </button>-->
+
+                <button class="circle transparent">
+                    <i>notifications</i>
+                    
+                        <nav class="drawer max no-padding" style="width:30vh !important;"><a class="small-round"><img class="small"
+                                    src="/reddit-community.png">
+                                <div class="max wrap" style="width:20vh;">
+                                    <div class="recortar-texto">Nuevo reporte de desempeño académico del último trimestre disponible para su revisión</div><label
+                                        class="grey-text">05/07/2024 09:00 AM</label>
+                                </div>
+                            </a><a class="small-round"><img class="small" src="/reddit-community.png">
+                                <div class="max wrap" style="width:20vh;">
+                                    <div class="recortar-texto">Se ha actualizado el reporte mensual de asistencia con nuevos datos hasta la fecha.</div><label class="grey-text">05/07/2024 02:30 PM</label>
+                                </div>
+                            </a><a class="small-round"><img class="small" src="/reddit-community.png">
+                                <div class="max wrap" style="width:20vh;">
+                                    <div class="recortar-texto">Le recordamos que aún no ha revisado el reporte de indicadores de gestión educativa del mes pasado
+                                    </div><label class="grey-text">06/07/2024 08:00 AM</label>
+                                </div>
+                            </a></nav>
+                 
+                </button>
                 <button class="circle large transparent" data-ui="#menu-user">
                     <i class="extra">account_circle</i>
                     <menu class="left no-wrap" id="menu-user" data-ui="#menu-user"><a>
@@ -151,7 +173,8 @@
                     </nav>
                     <div class="grid">
                         <div class="s12">
-                            <div class="field label border"><input type="text" placeholder="Nombre de grupo"><label>Nombre</label></div>
+                            <div class="field label border"><input type="text"
+                                    placeholder="Nombre de grupo"><label>Nombre</label></div>
                         </div>
                         <div class="s12">
                             <div class="field label border"><input type="text" placeholder="Posición">
@@ -159,7 +182,8 @@
                             </div>
                         </div>
                         <div class="s12">
-                            <div class="field label border"><input type="text" placeholder="Descripción"><label>Descripción</label>
+                            <div class="field label border"><input type="text"
+                                    placeholder="Descripción"><label>Descripción</label>
                             </div>
                         </div>
                         <div class="s12">
@@ -171,18 +195,24 @@
                 <!--INICIO MODAL GESTIÓN-->
                 <div class="blur overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-gestion">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
+                    <nav><button class="circle transparent" data-ui="#modulo-gestion"><i>arrow_back</i></button>
                         <h5><img class="icono-animado" src="./images/pulse.svg"> Gestión</h5>
                         <div class="max"></div>
                         <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
                     </nav>
-                    
+
                     <div class="row scroll" style="padding-bottom: 2vh;">
                         <div class="hidden" id="transitionWindow">
                             <article class="no-padding medium-width">
                                 <div class="padding">
                                     <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
+                                        <div class="field border label l m" style="width:100%;"><input
+                                                placeholder=" "><label>Sección</label><i>arrow_drop_down</i>
+                                            <menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a>
+                                            </menu>
+                                        </div>
                                     </div>
                                     <hr class="large">
                                     <div class="row">
@@ -193,7 +223,7 @@
                                         <div class="field border label" style="width:100%"><input
                                                 placeholder=" "><label>URL</label></div>
                                     </div>
-                                    
+
                                     <footer class="fixed" style="padding-top:.7vh;">
                                         <nav class="right-align"><button class="border"
                                                 data-ui="#dialog-post">Cancel</button><button
@@ -260,11 +290,13 @@
                                     </div>
                                     <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Ejecución Presupuestal</div><label class="grey-text">3 Vistas</label>
+                                                <div>Ejecución Presupuestal</div><label class="grey-text">3
+                                                    Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>"Gestión de Riesgo de desastre"</div><label class="grey-text">40 Vistas</label>
+                                                <div>"Gestión de Riesgo de desastre"</div><label class="grey-text">40
+                                                    Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
@@ -304,7 +336,7 @@
                 <!--INICIO MODAL EDUCACIÓN-->
                 <div class="blur overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-educacion">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
+                    <nav><button class="circle transparent" data-ui="#modulo-educacion"><i>arrow_back</i></button>
                         <h5><img class="icono-animado" src="./images/pulse.svg"> Educación</h5>
                         <div class="max"></div>
                         <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
@@ -314,7 +346,13 @@
                             <article class="no-padding medium-width">
                                 <div class="padding">
                                     <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
+                                        <div class="field border label l m" style="width:100%;"><input
+                                                placeholder=" "><label>Sección</label><i>arrow_drop_down</i>
+                                            <menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a>
+                                            </menu>
+                                        </div>
                                     </div>
                                     <hr class="large">
                                     <div class="row">
@@ -325,7 +363,7 @@
                                         <div class="field border label" style="width:100%"><input
                                                 placeholder=" "><label>URL</label></div>
                                     </div>
-                                    
+
                                     <footer class="fixed" style="padding-top:.7vh;">
                                         <nav class="right-align"><button class="border"
                                                 data-ui="#dialog-post">Cancel</button><button
@@ -344,7 +382,8 @@
                                     </div>
                                     <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Reinsersión y continuidad</div><label class="grey-text">3 Vistas</label>
+                                                <div>Reinsersión y continuidad</div><label class="grey-text">3
+                                                    Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
@@ -352,7 +391,8 @@
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Reinsersión y continuidad 2023</div><label class="grey-text">12 Vistas</label>
+                                                <div>Reinsersión y continuidad 2023</div><label class="grey-text">12
+                                                    Vistas</label>
                                             </div>
                                         </a></nav>
                                 </div>
@@ -372,11 +412,13 @@
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>"Convivencia Escolar 2016-2019"</div><label class="grey-text">40 Vistas</label>
+                                                <div>"Convivencia Escolar 2016-2019"</div><label class="grey-text">40
+                                                    Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Aprende Saludable 2017-2019</div><label class="grey-text">12 Vistas</label>
+                                                <div>Aprende Saludable 2017-2019</div><label class="grey-text">12
+                                                    Vistas</label>
                                             </div>
                                         </a></nav>
                                 </div>
@@ -396,7 +438,8 @@
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Formación CBD - DOC 2021</div><label class="grey-text">40 Vistas</label>
+                                                <div>Formación CBD - DOC 2021</div><label class="grey-text">40
+                                                    Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
@@ -420,7 +463,8 @@
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Acompañamiento Pedagógico 2017-2023</div><label class="grey-text">40 Vistas</label>
+                                                <div>Acompañamiento Pedagógico 2017-2023</div><label
+                                                    class="grey-text">40 Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
@@ -436,7 +480,7 @@
                 <!--INICIO MODAL RECURSOS-->
                 <div class="blur overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-recursos">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
+                    <nav><button class="circle transparent" data-ui="#modulo-recursos"><i>arrow_back</i></button>
                         <h5><img class="icono-animado" src="./images/pulse.svg"> Recursos</h5>
                         <div class="max"></div>
                         <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
@@ -446,7 +490,13 @@
                             <article class="no-padding medium-width">
                                 <div class="padding">
                                     <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
+                                        <div class="field border label l m" style="width:100%;"><input
+                                                placeholder=" "><label>Sección</label><i>arrow_drop_down</i>
+                                            <menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a>
+                                            </menu>
+                                        </div>
                                     </div>
                                     <hr class="large">
                                     <div class="row">
@@ -457,7 +507,7 @@
                                         <div class="field border label" style="width:100%"><input
                                                 placeholder=" "><label>URL</label></div>
                                     </div>
-                                    
+
                                     <footer class="fixed" style="padding-top:.7vh;">
                                         <nav class="right-align"><button class="border"
                                                 data-ui="#dialog-post">Cancel</button><button
@@ -569,7 +619,7 @@
                 <!--INICIO MODAL REPORTES-->
                 <div class="blur overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-reportes">
-                    <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
+                    <nav><button class="circle transparent" data-ui="#modulo-reportes"><i>arrow_back</i></button>
                         <h5><img class="icono-animado" src="./images/pulse.svg"> Reportes</h5>
                         <div class="max"></div>
                         <button class="square round extra" id="toggleWindowButton"><i>add</i></button>
@@ -579,7 +629,13 @@
                             <article class="no-padding medium-width">
                                 <div class="padding">
                                     <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input placeholder=" "><label>Sección</label><i>arrow_drop_down</i><menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a class="row"><i class="tiny">people</i><span>r/svelte</span></a></menu></div>
+                                        <div class="field border label l m" style="width:100%;"><input
+                                                placeholder=" "><label>Sección</label><i>arrow_drop_down</i>
+                                            <menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
+                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a>
+                                            </menu>
+                                        </div>
                                     </div>
                                     <hr class="large">
                                     <div class="row">
@@ -590,7 +646,7 @@
                                         <div class="field border label" style="width:100%"><input
                                                 placeholder=" "><label>URL</label></div>
                                     </div>
-                                    
+
                                     <footer class="fixed" style="padding-top:.7vh;">
                                         <nav class="right-align"><button class="border"
                                                 data-ui="#dialog-post">Cancel</button><button
@@ -609,15 +665,18 @@
                                     </div>
                                     <nav class="drawer max no-padding"><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Semáforo Escuela remoto 2021</div><label class="grey-text">3 Vistas</label>
+                                                <div>Semáforo Escuela remoto 2021</div><label class="grey-text">3
+                                                    Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Semáforo Escuela Remoto 2022</div><label class="grey-text">40 Vistas</label>
+                                                <div>Semáforo Escuela Remoto 2022</div><label class="grey-text">40
+                                                    Vistas</label>
                                             </div>
                                         </a><a class="small-round" href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Semáforo Escuela 2019</div><label class="grey-text">12 Vistas</label>
+                                                <div>Semáforo Escuela 2019</div><label class="grey-text">12
+                                                    Vistas</label>
                                             </div>
                                         </a></nav>
                                 </div>
@@ -631,9 +690,11 @@
                                             <div>Reportes</div>
                                         </div>
                                     </div>
-                                    <nav class="drawer max no-padding tarjetacontenidomenu"><a class="small-round" href="./ver.html">
+                                    <nav class="drawer max no-padding tarjetacontenidomenu"><a class="small-round"
+                                            href="./ver.html">
                                             <div class="max wrap">
-                                                <div>Visualización del Reporte</div><label class="grey-text">3 Vistas</label>
+                                                <div>Visualización del Reporte</div><label class="grey-text">3
+                                                    Vistas</label>
                                             </div>
                                         </a></nav>
                                 </div>
@@ -647,7 +708,8 @@
                                             <div>Reportes</div>
                                         </div>
                                     </div>
-                                    <nav class="drawer max no-padding tarjetacontenidomenu"><a class="small-round" href="./ver.html">
+                                    <nav class="drawer max no-padding tarjetacontenidomenu"><a class="small-round"
+                                            href="./ver.html">
                                             <div class="max wrap">
                                                 <div>Registrar Alertas</div><label class="grey-text">3 Vistas</label>
                                             </div>
@@ -768,8 +830,8 @@
                 </dialog>
                 <!--CONTENT-->
                 <div class="page right active">
-                    
-                   <div class="large-space"></div>
+
+                    <div class="large-space"></div>
                     <section class="responsive page left active">
                         <div class="carousel">
                             <div class="carousel-images">
@@ -780,7 +842,7 @@
                             <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                             <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
                         </div>
-                        
+
                         <div class="large-space"></div>
                         <!--<article class="no-elevate round no-padding large page bottom active" style="height:20vh;">
                             <img class="responsive" src="./images/SIDIPORTADA.webp">
@@ -817,50 +879,46 @@
                         <h2>Visto Recientemente</h2>
                         <div class="space"></div>
                         <div class="grid">
-                            <div class="s12 m6 l3">
+                            <div class="s6 m6 l3">
                                 <a class="wave round wrap" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/cursosnodoce.png">
+                                        <img class="responsive medium" src="./images/cursosnodoce.png">
                                         <div class="large-padding">
-                                            <h6>Cursos No Doc..</h6>
-                                            <p>Acciones Formativas</p>
+                                            <h6 class="recortar-text">Cursos No Doc..</h6>
+                                            <p class="recortar-text">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
                             </div>
-                            <div class="s12 m6 l3">
+                            <div class="s6 m6 l3">
                                 <a class="wave round wrap" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/webinars2021.png">
+                                        <img class="responsive medium" src="./images/webinars2021.png">
                                         <div class="large-padding">
-                                            <h6>Webinars 2021</h6>
-                                            <p>Acciones Formativas</p>
+                                            <h6 class="recortar-texto">Webinars 2021</h6>
+                                            <p class="recortar-texto">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
                             </div>
-                            <div class="s12 m6 l3">
+                            <div class="s6 m6 l3">
                                 <a class="wave round wrap" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/cursosprogramas2021.png">
+                                        <img class="responsive medium" src="./images/cursosprogramas2021.png">
                                         <div class="large-padding">
-                                            <h6>Cursos/Programas</h6>
-                                            <p>Acciones Formativas</p>
+                                            <h6 class="recortar-texto">Cursos/Programas</h6>
+                                            <p class="recortar-texto">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
                             </div>
-                            <div class="s12 m6 l3">
+                            <div class="s6 m6 l3">
                                 <a class="wave round wrap" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium"
-                                            src="./images/FORMACIONCBD.png">
+                                        <img class="responsive medium" src="./images/FORMACIONCBD.png">
                                         <div class="large-padding">
-                                            <h6>Formación CBD 2021</h6>
-                                            <p>Acciones Formativas</p>
+                                            <h6 class="recortar-texto">Formación CBD 2021</h6>
+                                            <p class="recortar-texto">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
@@ -871,58 +929,58 @@
                         <h2>Enlaces Externos</h2>
                         <div class="space"></div>
                         <div class="grid">
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
+                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
                                     <article class="round no-elevate no-padding"><img class="responsive medium"
                                             src="./images/ESCALE.jpg">
                                         <div class="large-padding">
-                                            <h6>ESCALE</h6>
-                                            <p>Programa MINEDU</p>
+                                            <h6 class="recortar-texto">ESCALE</h6>
+                                            <p class="recortar-texto">Programa MINEDU</p>
                                         </div>
                                     </article>
                                 </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
+                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
                                     <article class="round no-elevate no-padding"><img class="responsive medium"
                                             src="./images/SIGIED.jpg">
                                         <div class="large-padding">
-                                            <h6>SIGIED</h6>
-                                            <p>Sistema de gestión de información educativa</p>
+                                            <h6 class="recortar-texto">SIGIED</h6>
+                                            <p class="recortar-texto">Sistema de gestión de información educativa</p>
                                         </div>
                                     </article>
                                 </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
+                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
                                     <article class="round no-elevate no-padding"><img class="responsive medium"
                                             src="./images/SiseVe.jpg">
                                         <div class="large-padding">
-                                            <h6>SiseVe</h6>
-                                            <p>Contra la Violencia Familiar</p>
+                                            <h6 class="recortar-texto">SiseVe</h6>
+                                            <p class="recortar-texto">Contra la Violencia Familiar</p>
                                         </div>
                                     </article>
                                 </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
+                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
                                     <article class="round no-elevate no-padding"><img class="responsive medium"
                                             src="./images/Sigma.jpg">
                                         <div class="large-padding">
-                                            <h6>Sigma</h6>
-                                            <p>Segunda Versión
+                                            <h6 class="recortar-texto">Sigma</h6>
+                                            <p class="recortar-texto">Segunda Versión
                                             </p>
                                         </div>
                                     </article>
                                 </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
+                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
                                     <article class="round no-elevate no-padding"><img class="responsive medium"
                                             src="./images/EducacionAmbiental.jpg">
                                         <div class="large-padding">
-                                            <h6>Educación Ambiental</h6>
-                                            <p>Programa MINEDU</p>
+                                            <h6 class="recortar-texto">Educación Ambiental</h6>
+                                            <p class="recortar-texto">Programa MINEDU</p>
                                         </div>
                                     </article>
                                 </a></div>
-                            <div class="s12 m6 l4"><a class="wave round wrap" href="">
+                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
                                     <article class="round no-elevate no-padding"><img class="responsive medium"
                                             src="./images/SemaforoEscuela.jpg">
                                         <div class="large-padding">
-                                            <h6>Semaforo Escuela</h6>
-                                            <p>Programa MINEDU</p>
+                                            <h6 class="recortar-texto">Semaforo Escuela</h6>
+                                            <p class="recortar-texto">Programa MINEDU</p>
                                         </div>
                                     </article>
                                 </a></div>
@@ -1031,8 +1089,8 @@
             }
         });
     </script>
-   
-    
+
+
 
 </body>
 

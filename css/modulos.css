@@ -148,3 +148,47 @@
   .tarjetacontenidomenu{
     height:22.5vh !important;
   }
+
+  /* Estilos específicos para TABLETS (pantallas de 768px a 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/* Estilos específicos para MÓVILES (pantallas menores a 768px) */
+@media only screen and (max-width: 767px) {
+  .carousel{
+    height:20vh !important;
+  }
+  .large-space{
+    block-size: 0rem !important;
+  }
+  h2{
+    font-size: 1.3rem;
+  }
+  .large-padding > h6{
+    font-size: 1rem !important;
+  }
+  .large-padding > p{
+    font-size: .7rem !important;
+    margin-top:0;
+  }
+  nav.top > button {
+    display: none;
+  }
+  nav.top > a.logo{
+    align-items: baseline;
+  }
+  .recortar-texto {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    white-space: nowrap; /* Evita que el texto pase a otra línea */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Agrega "..." al final */
+    box-sizing: border-box; /* Asegura que padding y border no afecten el ancho */
+}
+.s6 > a.wave{
+  box-shadow: var(--elevate1) !important;
+}
+
+
+
+}
