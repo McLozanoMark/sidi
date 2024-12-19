@@ -58,9 +58,8 @@
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-images img {
+.carousel-images > img {
     width: 100%;
-    height: 100%;
     object-fit: contain;
     display: block;
 }
@@ -153,6 +152,10 @@
   }
   nav.top > a.logo{
     align-items: baseline;
+  }
+  .azul-gesi{
+    background: #0454a4 !important;
+    color: white !important;
   }
 
   /* Estilos específicos para TABLETS (pantallas de 768px a 1024px) */
