@@ -77,51 +77,139 @@
             <div class="overlay"></div>
 
         </nav>
-            <nav class="top"><button class="circle large transparent active" data-ui="#menu-menu"><i>menu</i>
-                    <!--<menu class="no-wrap" id="menu-menu" data-ui="#menu-menu"><a class="row" href="/gmail"><i>inbox</i>
-                            <div class="max">Inboxs</div>
-                        </a><a class="row" href="/gmail/snoozed"><i>watch_later</i>
-                            <div class="max">Snoozed</div>
-                        </a><a class="row" href="/gmail/important"><i>label_important</i>
-                            <div class="max">Important</div>
-                        </a><a class="row" href="/gmail/sent"><i>send</i>
-                            <div class="max">Sent</div>
-                        </a><a class="row" href="/gmail/drafts"><i>insert_drive_file</i>
-                            <div class="max">Drafts</div>
-                        </a><a class="row" href="/gmail/spam"><i>error_outline</i>
-                            <div class="max">Spam</div>
-                        </a><a class="row" data-ui="#themes3"><i>palette</i>
-                            <div class="max">Themes</div>
-                        </a></menu>-->
-                </button><a href="./start.html"><img src="images/logo_sidi.png" style="display: none;"><img src="images/logo_sidi.png"></a>
-                <div class="max"></div>
-                <div class="max"></div><button class="circle large transparent s"
-                    data-ui="#dialog-search"><i>search</i></button><a class="circle large transparent m l" href="./config.html"
-                    data-ui=""><i>settings</i>
-                    <!--<menu class="left no-wrap" id="menu-settings" data-ui="#menu-settings"><a>
-                            <div>Account</div><label>Change account</label>
-                        </a><a>
-                            <div>Appearance</div><label>Change display settings</label>
-                        </a></menu>-->
-                    </a><button class="circle large transparent m l" data-ui="#menu-apps"><i>apps</i>
-                    <menu class="left padding no-wrap" id="menu-apps" data-ui="#menu-apps">
-                        <div class="grid no-space">
-                            <div class="s4 center-align"><a class="button transparent circle large"
-                                    onclick="mode()"><i>light_mode</i></a></div>
-                            <!--<div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/keep.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/tasks.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/contacts.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/favicon.png"></a></div>-->
-                        </div>
-                    </menu>
-                </button><button class="circle large transparent"><i class="extra">account_circle</i></button>
-                <div class="overlay"></div>
+        <nav class="top sombra-1 azul-gesi"><button class="circle large transparent active menubutton" data-ui="#menu-menu"><i>menu</i>
+            <!--<menu class="no-wrap" id="menu-menu" data-ui="#menu-menu"><a class="row" href="/gmail"><i>inbox</i>
+                    <div class="max">Inboxs</div>
+                </a><a class="row" href="/gmail/snoozed"><i>watch_later</i>
+                    <div class="max">Snoozed</div>
+                </a><a class="row" href="/gmail/important"><i>label_important</i>
+                    <div class="max">Important</div>
+                </a><a class="row" href="/gmail/sent"><i>send</i>
+                    <div class="max">Sent</div>
+                </a><a class="row" href="/gmail/drafts"><i>insert_drive_file</i>
+                    <div class="max">Drafts</div>
+                </a><a class="row" href="/gmail/spam"><i>error_outline</i>
+                    <div class="max">Spam</div>
+                </a><a class="row" data-ui="#themes3"><i>palette</i>
+                    <div class="max">Themes</div>
+                </a></menu>-->
+        </button><a href="./start.html" class="logo" style="width: 12vh;"><img src="./images/logo_sidi_w.png" style="display: none;"><img
+                src="images/logo_sidi_w.png"></a>
+                
+        <div class="max"></div>
+        <div class="field large prefix round fill active" style="width: 50vh;">
+            <i class="front">search</i>
+            <input placeholder="¿Qué estas buscando?">
+            <menu class="min">
+                <div class="field large prefix suffix no-margin fixed">
+                    <i class="front">arrow_back</i>
+                    <input>
+                    <i class="front">close</i>
+                </div>
+                <a class="row" href="./ver.html">
+                    <i>history</i>
+                    <div>PEM Formación 2021</div>
+                </a>
+                <a class="row" href="./ver.html">
+                    <i>history</i>
+                    <div>FOrmación CBD - 2021</div>
+                </a>
+                <a class="row" href="./ver.html">
+                    <i>history</i>
+                    <div>Formación 2022</div>
+                </a>
+            </menu>
+        </div>
+        <div class="max"></div>
+        <button class="circle large transparent s" data-ui="#dialog-search"><i>search</i></button>
+        <!--<a class="circle large transparent m l" href="./config.html"><i>settings</i>
+           
+        </a>-->
+        <!--<button class="circle large transparent m l" data-ui="#menu-apps"><i>apps</i>
+            <menu class="left padding no-wrap" id="menu-apps" data-ui="#menu-apps">
+                <div class="grid no-space">
+                    <div class="s4 center-align"><a class="button transparent circle large"
+                            onclick="mode()"><i>light_mode</i></a></div>
+                    <div class="s4 center-align"><a class="button transparent circle large"><img
+                                class="no-round" src="/keep.png"></a></div>
+                    <div class="s4 center-align"><a class="button transparent circle large"><img
+                                class="no-round" src="/tasks.png"></a></div>
+                    <div class="s4 center-align"><a class="button transparent circle large"><img
+                                class="no-round" src="/contacts.png"></a></div>
+                    <div class="s4 center-align"><a class="button transparent circle large"><img
+                                class="no-round" src="/favicon.png"></a></div>
+                </div>
+            </menu>
+        </button>-->
 
+        <!--<button class="circle transparent">
+            <i>notifications</i>
+
+            <nav class="drawer max no-padding" style="width:30vh !important;">
+                <a class="small-round"><img
+                        class="small" src="/reddit-community.png">
+                    <div class="max wrap" style="width:20vh;">
+                        <div class="recortar-texto">Nuevo reporte de desempeño académico del último trimestre
+                            disponible para su revisión</div><label class="grey-text">05/07/2024 09:00
+                            AM</label>
+                    </div>
+                </a>
+                <a class="small-round"><img class="small" src="/reddit-community.png">
+                    <div class="max wrap" style="width:20vh;">
+                        <div class="recortar-texto">Se ha actualizado el reporte mensual de asistencia con
+                            nuevos datos hasta la fecha.</div><label class="grey-text">05/07/2024 02:30
+                            PM</label>
+                    </div>
+                </a>
+                <a class="small-round"><img class="small" src="/reddit-community.png">
+                    <div class="max wrap" style="width:20vh;">
+                        <div class="recortar-texto">Le recordamos que aún no ha revisado el reporte de
+                            indicadores de gestión educativa del mes pasado
+                        </div><label class="grey-text">06/07/2024 08:00 AM</label>
+                    </div>
+                </a>
             </nav>
+
+        </button>-->
+        <button class="circle large transparent">
+            <span>No-wrap</span>
+            <i>notifications</i>
+            <menu class="left no-wrap">
+                <a class="small-round"><img class="small" src="./images/user.jpg">
+                <div class="max wrap" style="width:20vh;">
+                    <div class="recortar-texto">Nuevo reporte de desempeño académico del último trimestre
+                        disponible para su revisión</div><label class="grey-text">05/07/2024 09:00
+                        AM</label>
+                </div>
+            </a>
+            <a class="small-round"><img class="small" src="./images/user.jpg">
+                <div class="max wrap" style="width:20vh;">
+                    <div class="recortar-texto">Se ha actualizado el reporte mensual de asistencia con
+                        nuevos datos hasta la fecha.</div><label class="grey-text">05/07/2024 02:30
+                        PM</label>
+                </div>
+            </a>
+            <a class="small-round"><img class="small" src="./images/user.jpg">
+                <div class="max wrap" style="width:20vh;">
+                    <div class="recortar-texto">Le recordamos que aún no ha revisado el reporte de
+                        indicadores de gestión educativa del mes pasado
+                    </div><label class="grey-text">06/07/2024 08:00 AM</label>
+                </div>
+            </a>
+            </menu>
+        </button>
+        <button class="circle large transparent" data-ui="#menu-user">
+            <i class="extra">account_circle</i>
+            <menu class="left no-wrap" id="menu-user" data-ui="#menu-user"><a>
+                    <div>Ajustes</div><label>Actualizar Perfil</label>
+                </a><a href="./index.html">
+                    <div>Salir</div><label>Cerrar Sesión</label>
+                </a>
+            </menu>
+        </button>
+        <div class="overlay"></div>
+
+    </nav>
             <main class="responsive max">
                 <div class="blur overlay"></div>
                 <dialog class="round large-width" id="dialog-add">
