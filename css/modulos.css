@@ -1,8 +1,9 @@
 .area-de-modulos{
     background: transparent !important;
     width: 100% !important;
-    padding: 0 7% !important;
+    padding: 0 !important;
     box-shadow: none;
+    height:80vh;
 }
 .icono-animado{
     height:50px;
@@ -88,6 +89,9 @@
 .carousel-btn:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
+.area-cards{
+  justify-content: center !important;
+}
 @media (min-width: 768px) {
     .slider-item {
       min-width: 33.333%;
@@ -157,6 +161,22 @@
     background: #0454a4 !important;
     color: white !important;
   }
+
+  .titulo-grafica{
+    font-size: 2vh;
+  }
+  .descripcion-grafica{
+    margin-top: 0;
+  }
+  .menu-area{
+    padding-left: 3vh;
+  }
+  .icon-header{
+    color: #ff4f43 !important;
+  }
+  .blur{
+    background: #0c3864b8;
+  }
   
 
   /* Estilos específicos para TABLETS (pantallas de 768px a 1024px) */
@@ -188,9 +208,19 @@
   nav.top > a.logo{
     align-items: baseline;
   }
-.s6 > a.wave{
-  box-shadow: var(--elevate1) !important;
-}
+  .s6 > a.wave{
+    box-shadow: var(--elevate1) !important;
+  }
+  .menu-area{
+    width: 30vh;
+    padding-left: 2vh;
+  }
+  .area-cards{
+   justify-content: flex-start !important;
+  }
+  .small-round > label {
+    display: none;
+  }
 }
 .small-round{
   flex-direction: row !important;
