@@ -157,6 +157,7 @@
     background: #0454a4 !important;
     color: white !important;
   }
+  
 
   /* Estilos específicos para TABLETS (pantallas de 768px a 1024px) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {

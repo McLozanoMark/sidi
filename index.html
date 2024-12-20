@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenido a Sidi</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.css" rel="stylesheet">
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.js"></script>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   <style>
     /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
@@ -177,9 +182,62 @@ a {
 .version > p {
     padding-bottom: 2vh;
     color:white;
+    font-size: 1vh;
 }
+/* Botón flotante */
+.boton-flotante {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .boton-flotante:hover {
+            background-color: #0056b3;
+        }
+
+        /* Ventana flotante */
+        .ventana-consulta {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+        }
+
+        .ventana-consulta header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .ventana-consulta .contenido {
+            padding: 15px;
+            font-size: 14px;
+        }
+
+      
 
   </style>
+  
 </head>
 <body>
   <div class="container">
@@ -187,7 +245,7 @@ a {
         <img src="./images/minedu.webp" alt="">
     </div>
     <div class="log">
-    <h1 class="nombre">Bienvenido a <img src="./images/logo_sidi_w.png"></h1>
+    <h6 class="nombre">Bienvenido a <img src="./images/logo_sidi_w.png"></h6>
     <a class="box__link button-animation" href="./start.html">
         Ingresar
         <span></span>
@@ -200,5 +258,34 @@ a {
         <p>SIDI v2.0 - Sistema Integrado de Información</p>
     </div>
   </div>
+  <!-- Botón flotante -->
+  <div class="boton-flotante" id="botonAbrir">?
+</div>
+
+<!-- Ventana flotante -->
+<div class="ventana-consulta" id="ventanaConsulta">
+    <header>Consulta en tiempo real</header>
+    <div class="contenido">
+        <div class="field border label max">
+            <input>
+            <label>Input</label>
+          </div>
+          <button class="responsive">
+            <i>send</i>
+            <span>Enviar</span>
+          </button>
+    </div>
+</div>
+
+<script>
+    // Manejo del botón y la ventana
+    const botonAbrir = document.getElementById('botonAbrir');
+    const ventanaConsulta = document.getElementById('ventanaConsulta');
+
+    botonAbrir.addEventListener('click', () => {
+        const isHidden = ventanaConsulta.style.display === 'none' || !ventanaConsulta.style.display;
+        ventanaConsulta.style.display = isHidden ? 'flex' : 'none';
+    });
+</script>
 </body>
 </html>
