@@ -156,11 +156,37 @@ a {
 .nombre > img{
  padding-left: 1vh;
 }
+.minedu_logo, .version, .log{
+    
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+}
+.minedu_logo > img {
+    padding-top: 20px;
+    height: 60px;
+}
+.container{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.version > p {
+    padding-bottom: 2vh;
+    color:white;
+}
 
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="minedu_logo">
+        <img src="./images/minedu.webp" alt="">
+    </div>
+    <div class="log">
     <h1 class="nombre">Bienvenido a <img src="./images/logo_sidi_w.png"></h1>
     <a class="box__link button-animation" href="./start.html">
         Ingresar
@@ -168,7 +194,11 @@ a {
         <span></span>
         <span></span>
         <span></span>
-      </a>
+    </a>
+</div>
+    <div class="version">
+        <p>SIDI v2.0 - Sistema Integrado de Información</p>
+    </div>
   </div>
 </body>
 </html>
