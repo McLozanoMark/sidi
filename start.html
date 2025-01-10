@@ -15,7 +15,14 @@
     <script type="module" src="./js/sidi-dynamic-colors.js"></script>
     <link rel="apple-touch-icon" href="/favicon.png">
     <link href="./css/modulos.css" rel="stylesheet">
-
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.js"></script>
+    <style>
+        .large-padding{
+            padding:0 !important;
+            padding-top: 1vh !important;
+            padding-bottom: 1vh !important;
+        }
+    </style>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -97,7 +104,7 @@
                         style="display: none;"><img src="images/logo_sidi_w.png"></a>
 
                 <div class="max"></div>
-                <div class="field large prefix round fill active" style="width: 50vh;">
+                <!--<div class="field large prefix round fill active" style="width: 50vh;">
                     <i class="front">search</i>
                     <input placeholder="¿Qué estas buscando?">
                     <menu class="min">
@@ -119,7 +126,7 @@
                             <div>Formación 2022</div>
                         </a>
                     </menu>
-                </div>
+                </div>-->
                 <div class="max"></div>
                 <button class="circle large transparent s" data-ui="#dialog-search"><i>search</i></button>
                 <!--<a class="circle large transparent m l" href="./config.html"><i>settings</i>
@@ -211,7 +218,7 @@
 
             </nav>
             <main class="responsive max">
-                <div class="blur overlay"></div>
+                <div class="overlay"></div>
                 <dialog class="round large-width" id="dialog-add">
                     <nav><button class="circle transparent" data-ui="#dialog-add"><i>arrow_back</i></button>
                         <h5>Nuevo Grupo</h5>
@@ -241,7 +248,7 @@
                     </div>
                 </dialog>
                 <!--INICIO MODAL GESTIÓN-->
-                <div class="blur overlay"></div>
+                <div class="overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-gestion">
                     <nav><button class="circle transparent" style="color:white !important;" data-ui="#modulo-gestion"><i>arrow_back</i></button>
                         <h5 style="color:white;"><img class="icono-animado" src="./images/pulse.svg"> Gestión</h5>
@@ -393,7 +400,7 @@
                 </dialog>
                 <!--FIN MODAL GESTIÓN-->
                 <!--INICIO MODAL a-->
-                <div class="blur overlay"></div>
+                <div class="overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-educacion">
                     <nav><button class="circle transparent" style="color:white !important;" data-ui="#modulo-educacion"><i>arrow_back</i></button>
                         <h5 style="color:white;"><img class="icono-animado" src="./images/pulse.svg"> Educación</h5>
@@ -553,14 +560,15 @@
                 <!--FIN MODAL a-->
                 
                 <!--INICIO MODAL RECURSOS-->
-                <div class="blur overlay"></div>
+                <!--
+                <div class="overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-recursos">
                     <nav><button class="circle transparent" data-ui="#modulo-recursos"><i>arrow_back</i></button>
                         <h5><img class="icono-animado" src="./images/pulse.svg"> Recursos</h5>
                         <div class="max"></div>
-                        <!--<button class="square round extra" id="toggleWindowButton"><i>add</i></button>-->
+                        
                     </nav>
-                    <div class="row scroll">
+                    <div class="row scroll">´
                         <div class="hidden" id="transitionWindow">
                             <article class="no-padding medium-width">
                                 <div class="padding">
@@ -690,9 +698,10 @@
                         </div>
                     </div>
                 </dialog>
+            -->
                 <!--FIN MODAL RECURSOS-->
                 <!--INICIO MODAL REPORTES-->
-                <div class="blur overlay"></div>
+                <div class="overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-reportes">
                     <nav><button class="circle transparent" data-ui="#modulo-reportes"><i>arrow_back</i></button>
                         <h5><img class="icono-animado" src="./images/pulse.svg"> Reportes</h5>
@@ -906,19 +915,135 @@
                 <!--CONTENT-->
                 <div class="page right active">
 
-                    <div class="large-space"></div>
                     <section class="responsive page left active">
-                        <div class="carousel">
+                        <div class="contenedor-galeria">
+                            <div class="galeria" id="galeria">
+                                <img src="./images/1.jpg" alt="Imagen 1" class="imagen-galeria">
+                                <img src="./images/2.jpg" alt="Imagen 2" class="imagen-galeria">
+                                <img src="./images/3.jpg" alt="Imagen 3" class="imagen-galeria">
+                            </div>
+                            <div class="navegacion" id="navegacion">
+                                <div class="vista-previa activo" data-indice="0">
+                                    <img src="./images/1.jpg" alt="Vista previa 1">
+                                </div>
+                                <div class="vista-previa" data-indice="1">
+                                    <img src="./images/2.jpg" alt="Vista previa 2">
+                                </div>
+                                <div class="vista-previa" data-indice="2">
+                                    <img src="./images/3.jpg" alt="Vista previa 3">
+                                </div>
+                            </div>
+                        </div>
+                        <style>
+                        .contenedor-galeria {
+                        width: 100%;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 3vh;
+                        }
+
+                        .galeria {
+                        display: flex;
+                        transition: transform 0.5s ease;
+                        height: 30vh;
+                        }
+
+                        .imagen-galeria {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        }
+
+                        .navegacion {
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                        bottom: 3vh;
+                        }
+
+                        .vista-previa {
+                        width: 60px;
+                        height: 60px;
+                        margin: 0 5px;
+                        cursor: pointer;
+                        border: 2px solid transparent;
+                        transition: border 0.3s;
+                        }
+
+                        .vista-previa.activo {
+                        border: 2px solid #007bff;
+                        }
+
+                        .vista-previa img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        }
+                        </style>
+                        <script>
+                            const galeria = document.getElementById('galeria');
+                            const vistasPrevias = document.querySelectorAll('.vista-previa');
+                            let indiceActual = 0;
+
+                            // Función para actualizar la galería
+                            function mostrarImagen(indice) {
+                                const anchoGaleria = galeria.clientWidth;
+                                galeria.style.transform = `translateX(-${indice * anchoGaleria}px)`;
+                                vistasPrevias.forEach((vista, i) => {
+                                    vista.classList.toggle('activo', i === indice);
+                                });
+                                indiceActual = indice;
+                            }
+
+                            // Añadir eventos de clic a las vistas previas
+                            vistasPrevias.forEach((vista) => {
+                                vista.addEventListener('click', () => {
+                                    const indice = Number(vista.getAttribute('data-indice'));
+                                    mostrarImagen(indice);
+                                });
+                            });
+
+                            // Cambiar automáticamente cada 5 segundos
+                            setInterval(() => {
+                                const siguienteIndice = (indiceActual + 1) % vistasPrevias.length;
+                                mostrarImagen(siguienteIndice);
+                            }, 5000);
+                        </script>
+                        <!--<div class="carousel">
                             <div class="carousel-images">
-                                <img src="./images/sl1.jpg" alt="Imagen 3">
-                                <img src="./images/sl2.jpg" alt="Imagen 4">
-                                <img src="./images/sl3.jpg" alt="Imagen 3">
+                                <img src="./images/1.jpg" alt="Imagen 3">
+                                <img src="./images/2.jpg" alt="Imagen 4">
+                                <img src="./images/3.jpg" alt="Imagen 3">
                             </div>
                             <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                             <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                        </div>-->
+                        <div class="area-buscar" style="display: flex;justify-content: center; align-self: center;">
+                            <div class="field large prefix round fill active" style="width: 50vh; margin-block-end: 0 !important;">
+                                <i class="front">search</i>
+                                <input placeholder="¿Qué estas buscando?">
+                                <menu class="min">
+                                    <div class="field large prefix suffix no-margin fixed">
+                                        <i class="front">arrow_back</i>
+                                        <input>
+                                        <i class="front">close</i>
+                                    </div>
+                                    <a class="row" href="./ver.html">
+                                        <i>history</i>
+                                        <div>PEM Formación 2021</div>
+                                    </a>
+                                    <a class="row" href="./ver.html">
+                                        <i>history</i>
+                                        <div>FOrmación CBD - 2021</div>
+                                    </a>
+                                    <a class="row" href="./ver.html">
+                                        <i>history</i>
+                                        <div>Formación 2022</div>
+                                    </a>
+                                </menu>
+                            </div>
                         </div>
-
-                        <div class="large-space"></div>
+                        
                         <!--<article class="no-elevate round no-padding large page bottom active" style="height:20vh;">
                             <img class="responsive" src="./images/SIDIPORTADA.webp">
                             <div class="absolute middle center center-align black-text">
@@ -927,14 +1052,17 @@
                                 <nav class="center-align"><button class="extra">Get started</button></nav>
                             </div>
                         </article>-->
-                        <h4>Visitados Recientemente</h4>
-                        <div class="space"></div>
+                        <h6 style="margin-top: 0 !important;">Visitados recientemente</h6>
+                        
                         <div class="grid">
+
+                            
+                            
                             <div class="s6 m6 l3">
                                 <a class="wave round wrap sombra-2" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/cursosnodoce.png">
-                                        <div class="large-padding">
+                                        <img class="responsive medium sombra-1" src="./images/cursosnodoce.png" style="height:10vh">
+                                        <div class="large-padding" style="padding: 1vh !important;">
                                             <h6 class="recortar-texto titulo-grafica">Cursos No Docentes 2022</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
@@ -944,8 +1072,8 @@
                             <div class="s6 m6 l3">
                                 <a class="wave round wrap sombra-2" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/webinars2021.png">
-                                        <div class="large-padding">
+                                        <img class="responsive medium sombra-1" src="./images/webinars2021.png" style="height:10vh">
+                                        <div class="large-padding" style="padding: 1vh !important;">
                                             <h6 class="recortar-texto titulo-grafica">Webinars 2021</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
@@ -955,8 +1083,8 @@
                             <div class="s6 m6 l3">
                                 <a class="wave round wrap sombra-2" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/cursosprogramas2021.png">
-                                        <div class="large-padding">
+                                        <img class="responsive medium sombra-1" src="./images/cursosprogramas2021.png" style="height:10vh">
+                                        <div class="large-padding" style="padding: 1vh !important;">
                                             <h6 class="recortar-texto titulo-grafica">Cursos/Programas</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
@@ -966,8 +1094,8 @@
                             <div class="s6 m6 l3">
                                 <a class="wave round wrap sombra-2" href="./ver.html">
                                     <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/FORMACIONCBD.png">
-                                        <div class="large-padding">
+                                        <img class="responsive medium sombra-1" src="./images/FORMACIONCBD.png" style="height:10vh">
+                                        <div class="large-padding" style="padding: 1vh !important;">
                                             <h6 class="recortar-texto titulo-grafica">Formación CBD 2021</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
@@ -975,148 +1103,49 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="large-space"></div>
-                        <div class="large-space"></div>
-                        <h4>Enlaces Externos</h4>
-                        <div class="space"></div>
+                        
+                        <h6>Enlaces externos</h6>
+                        
                         <div class="grid">
-                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/ESCALE.jpg">
-                                        <div class="large-padding">
-                                            <h6 class="recortar-texto">ESCALE</h6>
-                                            <p class="recortar-texto">ESCALE (Evaluación de la Calidad de la Educación)
-                                                es una herramienta desarrollada por el Ministerio de Educación del Perú
-                                                (MINEDU) para gestionar y analizar información educativa a nivel
-                                                nacional.</p>
-                                        </div>
+                            
+                            <div class="s6 m6 l2">
+                                <a class="" href="">
+                                    <article class="no-padding" style="height:10vh;">
+                                        <img src="./images/SiseVe.jpg" alt="" style="height:10vh">
                                     </article>
-                                </a></div>
-                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/SIGIED.jpg">
-                                        <div class="large-padding">
-                                            <h6 class="recortar-texto">SIGIED</h6>
-                                            <p class="recortar-texto">El SIGIED (Sistema Integrado de Gestión de la
-                                                Información de la Educación) es una plataforma del Ministerio de
-                                                Educación del Perú (MINEDU) diseñada para centralizar y gestionar
-                                                información sobre el sistema educativo peruano</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/SiseVe.jpg">
-                                        <div class="large-padding">
-                                            <h6 class="recortar-texto">SiseVe</h6>
-                                            <p class="recortar-texto">El SISEVE (Sistema Especializado en la Prevención
-                                                y Atención de la Violencia Escolar) es una plataforma desarrollada por
-                                                el Ministerio de Educación del Perú (MINEDU) para reportar y gestionar
-                                                casos de violencia escolar</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/Sigma.jpg">
-                                        <div class="large-padding">
-                                            <h6 class="recortar-texto">Sigma</h6>
-                                            <p class="recortar-texto">El SIGMA (Sistema Integrado de Gestión para la
-                                                Mejora de los Aprendizajes) es una plataforma desarrollada por el
-                                                Ministerio de Educación del Perú (MINEDU) para fortalecer la gestión
-                                                educativa en las instituciones y garantizar la mejora de los
-                                                aprendizajes de los estudiantes
-                                            </p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/EducacionAmbiental.jpg">
-                                        <div class="large-padding">
-                                            <h6 class="recortar-texto">Educación Ambiental</h6>
-                                            <p class="recortar-texto">Programa MINEDU</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                            <div class="s6 m6 l4"><a class="wave round wrap" href="">
-                                    <article class="round no-elevate no-padding"><img class="responsive medium"
-                                            src="./images/SemaforoEscuela.jpg">
-                                        <div class="large-padding">
-                                            <h6 class="recortar-texto">Semaforo Escuela</h6>
-                                            <p class="recortar-texto">Programa MINEDU</p>
-                                        </div>
-                                    </article>
-                                </a></div>
-                        </div>
-                        <div class="large-space"></div>
-                        <!--<div class="large-space"></div>
-                        <h2>Resources</h2>
-                        <div class="grid">
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Material blog</h6>
-                                        <p>News, tutorials, and inspiration from the Material team</p>
-                                    </article>
-                                </a></div>
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Figma design kit</h6>
-                                        <p>Customizable styles and components to help you design with Material 3</p>
-                                    </article>
-                                </a></div>
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Get started</h6>
-                                        <p>Guides, videos, and tools to start building with Material</p>
-                                    </article>
-                                </a></div>
-                            <div class="s12 l6"><a class="wave round wrap" href="./ver.html">
-                                    <article class="round no-elevate large-padding">
-                                        <h6>Develop</h6>
-                                        <p>Code and developer documentation for Android, Flutter, and the Web</p>
-                                    </article>
-                                </a></div>
-                        </div>
-                        <div class="large-space"></div>
-                        <div class="large-space"></div>
-                        <hr>
-                        <div class="large-space"></div>
-                        <div class="grid">
-                            <div class="s12 l6"><svg class="medium" viewBox="0 0 24 24">
-                                    <path
-                                        d="M21,12C21,9.97 20.33,8.09 19,6.38V17.63C20.33,15.97 21,14.09 21,12M17.63,19H6.38C7.06,19.55 7.95,20 9.05,20.41C10.14,20.8 11.13,21 12,21C12.88,21 13.86,20.8 14.95,20.41C16.05,20 16.94,19.55 17.63,19M11,17L7,9V17H11M17,9L13,17H17V9M12,14.53L15.75,7H8.25L12,14.53M17.63,5C15.97,3.67 14.09,3 12,3C9.91,3 8.03,3.67 6.38,5H17.63M5,17.63V6.38C3.67,8.09 3,9.97 3,12C3,14.09 3.67,15.97 5,17.63M23,12C23,15.03 21.94,17.63 19.78,19.78C17.63,21.94 15.03,23 12,23C8.97,23 6.38,21.94 4.22,19.78C2.06,17.63 1,15.03 1,12C1,8.97 2.06,6.38 4.22,4.22C6.38,2.06 8.97,1 12,1C15.03,1 17.63,2.06 19.78,4.22C21.94,6.38 23,8.97 23,12Z">
-                                    </path>
-                                </svg>
-                                <p>SIDI es un sistema de gestión de datos estudiantiles del Ministerio de Educación, que
-                                    organiza y facilita la recolección de información sobre los estudiantes. Con su
-                                    plataforma digital, SIDI mejora la toma de decisiones en educación, permitiendo un
-                                    acceso rápido y eficiente a los datos clave de los alumnos.</p>
+                                </a>
                             </div>
-                            <div class="s12 l6">
-                                <div class="grid large-line">
-                                    <div class="s4">
-                                        <p class="bold">Social</p>
-                                        <p><a class="link">GitHub</a></p>
-                                        <p><a class="link">Twitter</a></p>
-                                        <p><a class="link">Youtube</a></p>
-                                        <p><a class="link">Blog RSS</a></p>
-                                    </div>
-                                    <div class="s4">
-                                        <p class="bold">Libraries</p>
-                                        <p><a class="link">Android</a></p>
-                                        <p><a class="link">Compose</a></p>
-                                        <p><a class="link">Flutter</a></p>
-                                        <p><a class="link">Web</a></p>
-                                    </div>
-                                    <div class="s4">
-                                        <p class="bold">Archived versions</p>
-                                        <p><a class="link">Material Design 1</a></p>
-                                        <p><a class="link">Material Design 2</a></p>
-                                    </div>
-                                </div>
+                            <div class="s6 m6 l2">
+                                <a class="" href="">
+                                    <article class="no-padding">
+                                        <img src="./images/SIGIED.jpg" alt="" style="height:10vh">
+                                    </article>
+                                </a>
                             </div>
-                        </div>-->
+                            <div class="s6 m6 l2">
+                                <a class="" href="">
+                                    <article class="no-padding">
+                                        <img src="./images/Sigma.jpg" alt="" style="height:10vh">
+                                    </article>
+                                </a>
+                            </div>
+                            <div class="s6 m6 l2">
+                                <a class="" href="">
+                                    <article class="no-padding">
+                                        <img src="./images/EducacionAmbiental.jpg" alt="" style="height:10vh">
+                                    </article>
+                                </a>
+                            </div>
+                            <div class="s6 m6 l2">
+                                <a class="" href="">
+                                    <article class="no-padding">
+                                        <img src="./images/ESCALE.jpg" alt="" style="height:10vh">
+                                    </article>
+                                </a>
+                            </div>
+                            
+                            
+                        </div>
                         <div class="large-space"></div>
                         <div class="row large-space wrap">SIDI 2025 - MINEDU</div>
                     </section>
@@ -1124,6 +1153,78 @@
             </main>
         </div>
     </div>
+    <style>
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: transparent;
+      border-radius: 8px;
+      width: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .modal.active {
+      display: block;
+    }
+
+    .modal-step {
+      display: none;
+    }
+
+    .modal-step.active {
+      display: block;
+    }
+
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      bottom: 10vh;
+    }
+
+    .button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .button.secondary {
+      background-color: #6c757d;
+    }
+    </style>
+    <div id="modal" class="modal active" style="z-index: 1000000;">
+      <div id="step-1" class="modal-step active">
+            <div class="img-wizard" style="height:50vh;">
+                <img src="./images/bienvenida.jpg" alt="" style="height:50vh;">
+            </div>
+            <button class="button" onclick="goToStep(2)">Siguiente</button>
+        </div>
+        <div id="step-2" class="modal-step">
+            <div class="img-wizard" style="height:50vh;">
+                <img src="./images/sidisitemap.jpg" alt="" style="height:50vh;">
+            </div>
+            <button class="button secondary" onclick="goToStep(1)">Anterior</button>
+            <button class="button" onclick="closeModal()">Finalizar</button>
+        </div>
+    </div>
+    <script>
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        function goToStep(step) {
+            document.querySelectorAll('.modal-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${step}`).classList.add('active');
+        }
+    </script>
     <script src="/__/firebase/8.2.9/firebase-app.js"></script>
     <script src="/__/firebase/8.2.9/firebase-analytics.js"></script>
     <script src="/__/firebase/init.js"></script>
