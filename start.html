@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./css/sidi.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.jsstyle.css" rel="stylesheet">
     <script type="module" src="./js/sidi.js"></script>
     <script type="module" src="./js/sidi-dynamic-colors.js"></script>
     <link rel="apple-touch-icon" href="/favicon.png">
@@ -48,9 +49,68 @@
 <body class="light">
     <div id="app" data-v-app="">
         <div>
+            
+            
+        <div class="menu">
+            <div class="dropdown">
+                <button class="dropdown-button">Menu</button>
+                <div class="dropdown-content">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+            
+            <style>
+                  .menu {
+      width: 200px;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      font-size: 16px;
+    }
+    .dropdown-button:hover {
+      background-color: #45a049;
+    }
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ddd;
+      width: 100%;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+            </style>
+
+           
+            <!--
             <nav class="left m l medium-space sombra-2">
                 <header></header>
-                <!--<button class="fill square round extra" data-ui="#dialog-add"><i>add</i></button>-->
+               
                 <a data-ui="#modulo-gestion " href="#" class=""><i>watch_later</i>
                     <div class="tooltip right">Gestión</div>
                     <span>Gestión</span>
@@ -69,7 +129,7 @@
                 </a>
                 <div class="overlay"></div>
 
-            </nav>
+            </nav>-->
             <nav class="bottom s sombra-2"><a href="#" data-ui="#modulo-gestion" class="active"><i>watch_later</i>
                     <div>Gestión</div>
                 </a><a href="#" data-ui="#modulo-educacion"><i>school</i>
@@ -968,6 +1028,7 @@
                         cursor: pointer;
                         border: 2px solid transparent;
                         transition: border 0.3s;
+                        border-radius: 0;
                         }
 
                         .vista-previa.activo {
