@@ -83,6 +83,11 @@
   list-style: none;
   transition: all 0.4s ease;
   background: white;
+  
+  justify-content: flex-start; 
+  display:flex; 
+  padding-left:3vh
+
 }
 .sidebar1 .nav-links > li.active:before,
 .sidebar1 .nav-links > li:before {
@@ -106,6 +111,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  left: -30;
 }
 .sidebar1.close .nav-links li .iocn-link {
   display: block;
@@ -179,7 +185,7 @@
   left: 100%;
   top: -10px;
   margin-top: 0;
-  padding: 10px 20px;
+  padding: 10px 20px 10px 0;
   border-radius: 0 6px 6px 0;
   opacity: 0;
   display: block;
@@ -340,15 +346,7 @@
                   <span class="logo_name">CodingLab</span>
                 </div>
                 <ul class="nav-links">
-                  <!--<li>
-                    <a href="#">
-                      <i class='bx bx-grid-alt'></i>
-                      <span class="link_name">Dashboard</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Category</a></li>
-                    </ul>
-                  </li>-->
+               
                   
                   
                     <li>
@@ -364,7 +362,7 @@
                           <li><a href="#">Reporte Ejecutivo</a></li>
                           <li><a href="#">Seguimiento IBAE 2024</a></li>
                         </ul>
-                      </li>
+                    </li>
                   <li>
                     <div class="iocn-link">
                       <a href="#">
@@ -511,7 +509,8 @@
                       <li><a class="link_name" href="#">Infraestructura Educativa</a></li>
                       <li><a href="#">Diagnósticos</a></li>
                     </ul>
-                  </li><li>
+                  </li>
+                  <li>
                     <div class="iocn-link">
                       <a href="#">
                         <i class='bx bxs-wallet-alt' ></i>
@@ -525,113 +524,8 @@
                       <li><a href="#">Login Form</a></li>
                       <li><a href="#">Gestión de Riesgo</a></li>
                     </ul>
-                  </li>
-                  <!--<li>
-                    <a href="#">
-                      <i class='bx bx-pie-chart-alt-2'></i>
-                      <span class="link_name">Analytics</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Analytics</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-line-chart'></i>
-                      <span class="link_name">Chart</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Chart</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="iocn-link">
-                      <a href="#">
-                        <i class='bx bx-plug'></i>
-                        <span class="link_name">Plugins</span>
-                      </a>
-                      <i class='bx bxs-chevron-down arrow'></i>
-                    </div>
-                    <ul class="sub-menu">
-                      <li><a class="link_name" href="#">Plugins</a></li>
-                      <li><a href="#">UI Face</a></li>
-                      <li><a href="#">Pigments</a></li>
-                      <li><a href="#">Box Icons</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-compass'></i>
-                      <span class="link_name">Explore</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Explore</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-history'></i>
-                      <span class="link_name">History</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">History</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-cog'></i>
-                      <span class="link_name">Setting</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Setting</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="profile-details">
-                      <div class="profile-content">
-                        <img src="https://gravatar.com/avatar/f57bddebd1edf91412d5d68702530099" alt="profileImg">
-                      </div>
-                      <div class="name-job">
-                        <div class="profile_name">Dumitru Chirutac</div>
-                        <div class="job">Web Desginer</div>
-                      </div>
-                      <i class='bx bx-log-out'></i>
-                    </div>
-                  </li>-->
-                </ul>
-              </div>
-              <!--<section class="home-section">
-                <div class="home-content">
-                  <i class='bx bx-menu'></i>
-                  <span class="text">Drop Down Sidebar</span>
-                </div>
-              </section>-->
-              
-
-           
-            <!--
-            <nav class="left m l medium-space sombra-2">
-                <header></header>
-               
-                <a data-ui="#modulo-gestion " href="#" class=""><i>watch_later</i>
-                    <div class="tooltip right">Gestión</div>
-                    <span>Gestión</span>
-                </a>
-                <a data-ui="#modulo-educacion" href="#" class=""><i>school</i>
-                    <div class="tooltip right">Educación</div>
-                    <span>Educación</span>
-                </a>
-                <a data-ui="#modulo-recursos" href="#" class=""><i>inbox</i>
-                    <div class="tooltip right">Recursos</div>
-                    <span>Recursos</span>
-                </a>
-                </a><a data-ui="#modulo-reportes" href="#" class=""><i>lab_profile</i>
-                    <div class="tooltip right">Reportes</div>
-                    <span>Reportes</span>
-                </a>
-                <div class="overlay"></div>
-
-            </nav>-->
+                  </li>   
+                </ul>            
             <nav class="bottom s sombra-2"><a href="#" data-ui="#modulo-gestion" class="active"><i>watch_later</i>
                     <div>Gestión</div>
                 </a><a href="#" data-ui="#modulo-educacion"><i>school</i>
@@ -1487,13 +1381,10 @@
                             </div>
                             <div class="navegacion" id="navegacion">
                                 <div class="vista-previa activo" data-indice="0">
-                                    <img src="./images/1.jpg" alt="Vista previa 1">
                                 </div>
                                 <div class="vista-previa" data-indice="1">
-                                    <img src="./images/2.jpg" alt="Vista previa 2">
                                 </div>
                                 <div class="vista-previa" data-indice="2">
-                                    <img src="./images/3.jpg" alt="Vista previa 3">
                                 </div>
                             </div>
                         </div>
@@ -1525,13 +1416,14 @@
                         }
 
                         .vista-previa {
-                        width: 60px;
-                        height: 60px;
+                        width: 10px;
+                        height: 10px;
                         margin: 0 5px;
                         cursor: pointer;
                         border: 2px solid transparent;
                         transition: border 0.3s;
-                        border-radius: 0;
+                        border-radius: 50%;
+                        background: white;
                         }
 
                         .vista-previa.activo {
