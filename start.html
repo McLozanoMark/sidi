@@ -16,6 +16,9 @@
     <script type="module" src="./js/sidi-dynamic-colors.js"></script>
     <link rel="apple-touch-icon" href="/favicon.png">
     <link href="./css/modulos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -26,6 +29,12 @@
             padding-top: 1vh !important;
             padding-bottom: 1vh !important;
         }
+        .gugi-regular {
+        font-family: "Gugi", serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
     </style>
     <style>
         .sidebar1 {
@@ -36,10 +45,11 @@
   width: 260px;
   z-index: 100;
   transition: all 0.5s ease;
+  box-shadow: var(--elevate1);
   background: white;
 }
 .sidebar1.close {
-  width: 78px;
+  width: 25vh;
 }
 .sidebar1 .logo-details {
   height: 60px;
@@ -92,7 +102,7 @@
   content: "";
   width: 4px;
   height: 100%;
-  background: #93181a;
+  background: #FF4F43;
   opacity: 0;
   transition: all 0.25s ease-in-out;
   border-top-right-radius: 5px;
@@ -112,19 +122,21 @@
 }
 .sidebar1 .nav-links li i {
   height: 50px;
-  min-width: 78px;
   text-align: center;
   line-height: 50px;
   color: #2c4da7;
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: white;
+  width: 4vh;
+}
+.area-notificacion{
+    width: 3vh;
 }
 
 .sidebar1 .nav-links li.active i,
 .sidebar1 .nav-links li:hover i {
-  color: red;
+  color: #FF4F43;
 }
 .sidebar1 .nav-links li.showMenu i.arrow {
   transform: rotate(-180deg);
@@ -142,15 +154,17 @@
   font-weight: 400;
   color: #2c4da7;
   transition: all 0.4s ease;
+  line-height: normal;
 }
 .sidebar1 .nav-links li.active a .link_name,
 .sidebar1 .nav-links li:hover a .link_name {
-  color: red;
+  color: #FF4F43;
 }
 .sidebar1.close .nav-links li a .link_name {
-  opacity: 0;
-  display: none;
-  pointer-events: none;
+  /*opacity: 0;
+  display: none;none;*/
+  width: 16vh;
+  line-height: normal;
 }
 .sidebar1 .nav-links li .sub-menu {
   padding: 6px;
@@ -171,6 +185,9 @@
   opacity: 0.6;
   transition: all 0.3s ease;
 }
+.sidebar1 .nav-links li .sub-menu a img {
+height: 3vh;
+}
 .sidebar1 .nav-links li .sub-menu a:hover {
   opacity: 1;
 }
@@ -179,12 +196,48 @@
   left: 100%;
   top: -10px;
   margin-top: 0;
-  padding: 10px 20px;
+  padding: 0;
   border-radius: 0 6px 6px 0;
   opacity: 0;
   display: block;
   pointer-events: none;
   transition: 0s;
+  box-shadow: var(--elevate1);
+}
+.sidebar1.close .nav-links li .sub-menu a.bigraphics{
+    width: 30vh;
+    height:5vh;
+    background: #b2ddfe;
+    display: flex !important;
+    align-self: center !important;
+    justify-content: left !important;
+    padding-left: 2vh;
+    font-weight: 700;
+}
+.sidebar1 .nav-links li .sub-menu li a.bigraphics{
+    width: 30vh;
+    height:5vh;
+    background: #b2ddfe;
+    display: flex !important;
+    align-self: center !important;
+    justify-content: left !important;
+    padding-left: 2vh;
+    font-weight: 700;
+}
+.sidebar1.close .nav-links li .sub-menu li a.bigraphics > img {
+    height:3vh;
+}
+.sidebar1.close .nav-links li .sub-menu li a:hover{
+    background: #a2c9e7;
+
+}
+.sidebar1.close .nav-links li .sub-menu li a.link_name {
+    width: 30vh;
+    height:5vh;
+    background: #eef8fe;
+    display: flex !important;
+    align-self: center !important;
+    justify-content: baseline !important;
 }
 .sidebar1.close .nav-links li:hover .sub-menu {
   top: 0;
@@ -340,15 +393,7 @@
                   <span class="logo_name">CodingLab</span>
                 </div>
                 <ul class="nav-links">
-                  <!--<li>
-                    <a href="#">
-                      <i class='bx bx-grid-alt'></i>
-                      <span class="link_name">Dashboard</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Category</a></li>
-                    </ul>
-                  </li>-->
+                 
                   
                   
                     <li>
@@ -356,13 +401,16 @@
                           <a href="#">
                             <i class='bx bxs-user'></i>
                             <span class="link_name">Alta Dirección</span>
+                            <div class="area-notificacion">
+                                <div class="badge none">1</div>
+                            </div>
                           </a>
                           <i class='bx bxs-chevron-down arrow'></i>
                         </div>
                         <ul class="sub-menu">
                           <li><a class="link_name" href="#">Alta Dirección</a></li>
-                          <li><a href="#">Reporte Ejecutivo</a></li>
-                          <li><a href="#">Seguimiento IBAE 2024</a></li>
+                          <li><a class="bigraphics" href="#"><img src="images/powerbi48px.png">Ejecutivo</a></li>
+                          <li><a class="bigraphics" href="#"><img src="images/powerbi48px.png">Seguimiento IBAE 2024</a> <div class="badge border no-round">Nuevo</div></li>
                         </ul>
                       </li>
                   <li>
@@ -370,14 +418,17 @@
                       <a href="#">
                         <i class='bx bxs-graduation'></i>
                         <span class="link_name">Servicios Educativos</span>
+                        <div class="area-notificacion">
+                            
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Servicios Educativos</a></li>
-                      <li><a href="#">EduCunas</a></li>
-                      <li><a href="#">Universidades Públicas 2024</a></li>
-                      <li><a href="#">Educación Ambiental</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">EduCunas</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Universidades Públicas 2024</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Educación Ambiental</a></li>
                     </ul>
                   </li>
                   <li>
@@ -385,14 +436,17 @@
                       <a href="#">
                         <i class='bx bxs-donate-heart' ></i>
                         <span class="link_name">Aprendo en casa</span>
+                        <div class="area-notificacion">
+                            
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Aprendo en casa</a></li>
-                      <li><a href="#">AEC ESR EFE 2023</a></li>
-                      <li><a href="#">AEC ESA 2020</a></li>
-                      <li><a href="#">Encuesta AEC DF0D9 2020</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">AEC ESR EFE 2023</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">AEC ESA 2020</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Encuesta AEC DF0D9 2020</a></li>
                     </ul>
                   </li>
                   <li>
@@ -400,13 +454,16 @@
                       <a href="#">
                         <i class='bx bxs-group' ></i>
                         <span class="link_name">Estudiantes</span>
+                        <div class="area-notificacion">
+                           
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Estudiantes</a></li>
-                      <li><a href="#">Matrícula 2023</a></li>
-                      <li><a href="#">Reinseccion y continuidad</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Matrícula 2023</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Reinseccion y continuidad</a></li>
                     </ul>
                   </li>
                   <li>
@@ -414,14 +471,17 @@
                       <a href="#">
                         <i class='bx bx-car' ></i>
                         <span class="link_name">Semáforo Escuela</span>
+                        <div class="area-notificacion">
+                            <div class="badge none">1</div>
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Semáforo Escuela</a></li>
-                      <li><a href="#">Indicadores Priorizados 2016 2019</a></li>
-                      <li><a href="#">Semaforo Escuela Remoto 2021</a></li>
-                      <li><a href="#">Semaforo Escuela Remoto 2010</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Indicadores Priorizados 2016 2019</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Semaforo Escuela Remoto 2021</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Semaforo Escuela Remoto 2010 <div class="badge border no-round">New</div></a></li>
                     </ul>
                   </li>
                   <li>
@@ -429,14 +489,17 @@
                       <a href="#">
                         <i class='bx bxs-time' ></i>
                         <span class="link_name">Histórico</span>
+                        <div class="area-notificacion">
+                            
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Histórico</a></li>
-                      <li><a href="#">Educación Superior 2020</a></li>
-                      <li><a href="#">Cursos Virtuales DOC 2020</a></li>
-                      <li><a href="#">Capacitación UGEL 2020</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Educación Superior 2020</a></li>
+                      <li><a href="#" class="bigraphics "><img src="images/powerbi48px.png">Cursos Virtuales DOC 2020</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Capacitación UGEL 2020</a></li>
                     </ul>
                   </li>
                   <li>
@@ -444,14 +507,17 @@
                       <a href="#">
                         <i class='bx bxs-report' ></i>
                         <span class="link_name">Contratación</span>
+                        <div class="area-notificacion">
+                            <div class="badge none">1</div>
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Contratación</a></li>
-                      <li><a href="#">Plazas Cubiertas</a></li>
-                      <li><a href="#">Contratación CAS EFE</a></li>
-                      <li><a href="#">Contratación 2024</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Plazas Cubiertas</a><div class="badge border no-round">Nuevo</div></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Contratación CAS EFE</a></li>
+                      <li><a href="#" class="bigraphics"> <img src="images/powerbi48px.png">Contratación 2024</a></li>
                     </ul>
                   </li>
                   <li>
@@ -459,14 +525,17 @@
                       <a href="#">
                         <i class='bx bxs-book' ></i>
                         <span class="link_name">Recursos Educativos</span>
+                        <div class="area-notificacion">
+                           
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Recursos Educativos</a></li>
-                      <li><a href="#">Bienes Patrimoniales</a></li>
-                      <li><a href="#">Insumo EFE 2023</a></li>
-                      <li><a href="#">Tabletas 2022-2023</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Bienes Patrimoniales</a></li>
+                      <li><a href="#" class="bigraphics"> <img src="images/powerbi48px.png">Insumo EFE 2023</a></li>
+                      <li><a href="#" class="bigraphics"> <img src="images/powerbi48px.png">Tabletas 2022-2023</a></li>
                     </ul>
                   </li>
                   <li>
@@ -474,13 +543,16 @@
                       <a href="#">
                         <i class='bx bxs-cog' ></i>
                         <span class="link_name">Herramientas USE</span>
+                        <div class="area-notificacion">
+                            
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Herramientas USE</a></li>
-                      <li><a href="#">EPER 2020-2021</a></li>
-                      <li><a href="#">MPE 2019-2022</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">EPER 2020-2021</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">MPE 2019-2022</a></li>
                       
                     </ul>
                   </li>
@@ -489,14 +561,17 @@
                       <a href="#">
                         <i class='bx bxs-component' ></i>
                         <span class="link_name">Acciones Formativas</span>
+                        <div class="area-notificacion">
+                            
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Acciones Formativas</a></li>
-                      <li><a href="#">PEM Formación 2021</a></li>
-                      <li><a href="#">Formación CBD-DOC 2021</a></li>
-                      <li><a href="#">Webinars 2021</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">PEM Formación 2021</a></li>
+                      <li><a href="#" class="bigraphics"> <img src="images/powerbi48px.png">Formación CBD-DOC 2021</a></li>
+                      <li><a href="#" class="bigraphics"> <img src="images/powerbi48px.png">Webinars 2021</a></li>
                     </ul>
                   </li>
                   <li>
@@ -504,134 +579,40 @@
                       <a href="#">
                         <i class='bx bxs-building' ></i>
                         <span class="link_name">Infraestructura Educativa</span>
+                        <div class="area-notificacion">
+                           
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Infraestructura Educativa</a></li>
-                      <li><a href="#">Diagnósticos</a></li>
+                      <li><a href="#" class="bigraphics">Diagnósticos</a></li>
                     </ul>
                   </li><li>
                     <div class="iocn-link">
                       <a href="#">
                         <i class='bx bxs-wallet-alt' ></i>
-                        <span class="link_name">Presp.. y compromisos</span>
+                        <span class="link_name">Presupuestos y compromisos</span>
+                        <div class="area-notificacion">
+                           
+                        </div>
                       </a>
                       <i class='bx bxs-chevron-down arrow'></i>
                     </div>
                     <ul class="sub-menu">
                       <li><a class="link_name" href="#">Presupuestos y compromisos</a></li>
-                      <li><a href="#">Ejecición Presupuestal</a></li>
-                      <li><a href="#">Login Form</a></li>
-                      <li><a href="#">Gestión de Riesgo</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Ejecición Presupuestal</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Login Form</a></li>
+                      <li><a href="#" class="bigraphics"><img src="images/powerbi48px.png">Gestión de Riesgo</a></li>
                     </ul>
                   </li>
-                  <!--<li>
-                    <a href="#">
-                      <i class='bx bx-pie-chart-alt-2'></i>
-                      <span class="link_name">Analytics</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Analytics</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-line-chart'></i>
-                      <span class="link_name">Chart</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Chart</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="iocn-link">
-                      <a href="#">
-                        <i class='bx bx-plug'></i>
-                        <span class="link_name">Plugins</span>
-                      </a>
-                      <i class='bx bxs-chevron-down arrow'></i>
-                    </div>
-                    <ul class="sub-menu">
-                      <li><a class="link_name" href="#">Plugins</a></li>
-                      <li><a href="#">UI Face</a></li>
-                      <li><a href="#">Pigments</a></li>
-                      <li><a href="#">Box Icons</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-compass'></i>
-                      <span class="link_name">Explore</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Explore</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-history'></i>
-                      <span class="link_name">History</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">History</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class='bx bx-cog'></i>
-                      <span class="link_name">Setting</span>
-                    </a>
-                    <ul class="sub-menu blank">
-                      <li><a class="link_name" href="#">Setting</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <div class="profile-details">
-                      <div class="profile-content">
-                        <img src="https://gravatar.com/avatar/f57bddebd1edf91412d5d68702530099" alt="profileImg">
-                      </div>
-                      <div class="name-job">
-                        <div class="profile_name">Dumitru Chirutac</div>
-                        <div class="job">Web Desginer</div>
-                      </div>
-                      <i class='bx bx-log-out'></i>
-                    </div>
-                  </li>-->
+                  
                 </ul>
               </div>
-              <!--<section class="home-section">
-                <div class="home-content">
-                  <i class='bx bx-menu'></i>
-                  <span class="text">Drop Down Sidebar</span>
-                </div>
-              </section>-->
+             
               
 
-           
-            <!--
-            <nav class="left m l medium-space sombra-2">
-                <header></header>
-               
-                <a data-ui="#modulo-gestion " href="#" class=""><i>watch_later</i>
-                    <div class="tooltip right">Gestión</div>
-                    <span>Gestión</span>
-                </a>
-                <a data-ui="#modulo-educacion" href="#" class=""><i>school</i>
-                    <div class="tooltip right">Educación</div>
-                    <span>Educación</span>
-                </a>
-                <a data-ui="#modulo-recursos" href="#" class=""><i>inbox</i>
-                    <div class="tooltip right">Recursos</div>
-                    <span>Recursos</span>
-                </a>
-                </a><a data-ui="#modulo-reportes" href="#" class=""><i>lab_profile</i>
-                    <div class="tooltip right">Reportes</div>
-                    <span>Reportes</span>
-                </a>
-                <div class="overlay"></div>
-
-            </nav>-->
             <nav class="bottom s sombra-2"><a href="#" data-ui="#modulo-gestion" class="active"><i>watch_later</i>
                     <div>Gestión</div>
                 </a><a href="#" data-ui="#modulo-educacion"><i>school</i>
@@ -647,130 +628,23 @@
             </nav>
             <nav class="top sombra-1 azul-gesi"><button class="circle large transparent active menubutton"
                     data-ui="#menu-menu"><i>menu</i>
-                    <!--<menu class="no-wrap" id="menu-menu" data-ui="#menu-menu"><a class="row" href="/gmail"><i>inbox</i>
-                            <div class="max">Inboxs</div>
-                        </a><a class="row" href="/gmail/snoozed"><i>watch_later</i>
-                            <div class="max">Snoozed</div>
-                        </a><a class="row" href="/gmail/important"><i>label_important</i>
-                            <div class="max">Important</div>
-                        </a><a class="row" href="/gmail/sent"><i>send</i>
-                            <div class="max">Sent</div>
-                        </a><a class="row" href="/gmail/drafts"><i>insert_drive_file</i>
-                            <div class="max">Drafts</div>
-                        </a><a class="row" href="/gmail/spam"><i>error_outline</i>
-                            <div class="max">Spam</div>
-                        </a><a class="row" data-ui="#themes3"><i>palette</i>
-                            <div class="max">Themes</div>
-                        </a></menu>-->
-                </button><i class='bx bx-menu'></i><a href="./start.html" class="logo" style="width: 12vh;"><img src="./images/logo_sidi_w.png"
+                    
+                </button><i class='bx bx-menu wave'></i><a href="./start.html" class="logo" style="width: 12vh;"><img src="./images/logo_sidi_w.png"
                         style="display: none;"><img src="images/logo_sidi_w.png"></a>
 
                 <div class="max"></div>
-                <!--<div class="field large prefix round fill active" style="width: 50vh;">
-                    <i class="front">search</i>
-                    <input placeholder="¿Qué estas buscando?">
-                    <menu class="min">
-                        <div class="field large prefix suffix no-margin fixed">
-                            <i class="front">arrow_back</i>
-                            <input>
-                            <i class="front">close</i>
-                        </div>
-                        <a class="row" href="./ver.html">
-                            <i>history</i>
-                            <div>PEM Formación 2021</div>
-                        </a>
-                        <a class="row" href="./ver.html">
-                            <i>history</i>
-                            <div>FOrmación CBD - 2021</div>
-                        </a>
-                        <a class="row" href="./ver.html">
-                            <i>history</i>
-                            <div>Formación 2022</div>
-                        </a>
-                    </menu>
-                </div>-->
+                
                 <div class="max"></div>
-                <button class="circle large transparent s" data-ui="#dialog-search"><i>search</i></button>
-                <!--<a class="circle large transparent m l" href="./config.html"><i>settings</i>
-                   
-                </a>-->
-                <!--<button class="circle large transparent m l" data-ui="#menu-apps"><i>apps</i>
-                    <menu class="left padding no-wrap" id="menu-apps" data-ui="#menu-apps">
-                        <div class="grid no-space">
-                            <div class="s4 center-align"><a class="button transparent circle large"
-                                    onclick="mode()"><i>light_mode</i></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/keep.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/tasks.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/contacts.png"></a></div>
-                            <div class="s4 center-align"><a class="button transparent circle large"><img
-                                        class="no-round" src="/favicon.png"></a></div>
-                        </div>
-                    </menu>
-                </button>-->
+                <button class="circle large transparent" data-ui="#dialog-search"><i>search</i></button>
+               
+                
 
-                <!--<button class="circle transparent">
-                    <i>notifications</i>
-
-                    <nav class="drawer max no-padding" style="width:30vh !important;">
-                        <a class="small-round"><img
-                                class="small" src="/reddit-community.png">
-                            <div class="max wrap" style="width:20vh;">
-                                <div class="recortar-texto">Nuevo reporte de desempeño académico del último trimestre
-                                    disponible para su revisión</div><label class="grey-text">05/07/2024 09:00
-                                    AM</label>
-                            </div>
-                        </a>
-                        <a class="small-round"><img class="small" src="/reddit-community.png">
-                            <div class="max wrap" style="width:20vh;">
-                                <div class="recortar-texto">Se ha actualizado el reporte mensual de asistencia con
-                                    nuevos datos hasta la fecha.</div><label class="grey-text">05/07/2024 02:30
-                                    PM</label>
-                            </div>
-                        </a>
-                        <a class="small-round"><img class="small" src="/reddit-community.png">
-                            <div class="max wrap" style="width:20vh;">
-                                <div class="recortar-texto">Le recordamos que aún no ha revisado el reporte de
-                                    indicadores de gestión educativa del mes pasado
-                                </div><label class="grey-text">06/07/2024 08:00 AM</label>
-                            </div>
-                        </a>
-                    </nav>
-
-                </button>-->
-                <button class="circle large transparent">
-                    <span>No-wrap</span>
-                    <i>notifications</i>
-                    <menu class="left no-wrap">
-                        <a class="small-round"><img class="small" src="./images/user.jpg">
-                            <div class="max wrap" style="width:20vh;">
-                                <div class="recortar-texto">Nuevo reporte de desempeño académico del último trimestre
-                                    disponible para su revisión</div><label class="grey-text">05/07/2024 09:00
-                                    AM</label>
-                            </div>
-                        </a>
-                        <a class="small-round"><img class="small" src="./images/user.jpg">
-                            <div class="max wrap" style="width:20vh;">
-                                <div class="recortar-texto">Se ha actualizado el reporte mensual de asistencia con
-                                    nuevos datos hasta la fecha.</div><label class="grey-text">05/07/2024 02:30
-                                    PM</label>
-                            </div>
-                        </a>
-                        <a class="small-round"><img class="small" src="./images/user.jpg">
-                            <div class="max wrap" style="width:20vh;">
-                                <div class="recortar-texto">Le recordamos que aún no ha revisado el reporte de
-                                    indicadores de gestión educativa del mes pasado
-                                </div><label class="grey-text">06/07/2024 08:00 AM</label>
-                            </div>
-                        </a>
-                    </menu>
-                </button>
+               
+                
                 <button class="circle large transparent" data-ui="#menu-user">
                     <i class="extra">account_circle</i>
                     <menu class="left no-wrap" id="menu-user" data-ui="#menu-user"><a>
-                            <div>Ajustes</div><label>Actualizar Perfil</label>
+                            <div>Config</div><label>Cambiar Contraseña</label>
                         </a><a href="./index.html">
                             <div>Salir</div><label>Cerrar Sesión</label>
                         </a>
@@ -809,158 +683,7 @@
                         </div>
                     </div>
                 </dialog>
-                <!--INICIO MODAL GESTIÓN-->
-                <div class="overlay"></div>
-                <dialog class="area-de-modulos" id="modulo-gestion">
-                    <nav><button class="circle transparent" style="color:white !important;" data-ui="#modulo-gestion"><i>arrow_back</i></button>
-                        <h5 style="color:white;"><img class="icono-animado" src="./images/pulse.svg"> Gestión</h5>
-                        <div class="max"></div>
-                        <!--<button class="square round extra" id="toggleWindowButton"><i>add</i></button>-->
-                    </nav>
-
-                    <div class="row scroll area-cards" style="padding-bottom: 2vh; margin-top:25vh;">
-                        <div class="hidden" id="transitionWindow">
-                            <article class="no-padding medium-width">
-                                <div class="padding">
-                                    <div class="row">
-                                        <div class="field border label l m" style="width:100%;"><input
-                                                placeholder=" "><label>Sección</label><i>arrow_drop_down</i>
-                                            <menu><a class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
-                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a><a
-                                                    class="row"><i class="tiny">people</i><span>r/svelte</span></a>
-                                            </menu>
-                                        </div>
-                                    </div>
-                                    <hr class="large">
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>Nombre de Reporte</label></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="field border label" style="width:100%"><input
-                                                placeholder=" "><label>URL</label></div>
-                                    </div>
-
-                                    <footer class="fixed" style="padding-top:.7vh;">
-                                        <nav class="right-align"><button class="border"
-                                                data-ui="#dialog-post">Cancel</button><button
-                                                data-ui="#dialog-post">Confirm</button></nav>
-                                    </footer>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="menu-area">
-                            <article class="no-padding medium-width">
-                                <div class="no-padding" style="background: #b2ddfe;">
-                                    <div class="row padding"
-                                        style="color:rgb(0, 0, 0); background: white; border-radius: .75rem .75rem 0 0;">
-                                        <i class="icon-header">person</i>
-                                        <div><b>Alta Dirección</b>
-                                            <div style="color: #7474745e">Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max padding" style="padding-top:0 !important;">
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Archivo USE</h6>
-                                            </div>
-                                            <label>Cargado el 11 Dic</label>
-                                        </a>
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Acompañamiento</h6>
-                                            </div>
-                                            <label>Cargado el 2 Dic</label>
-                                        </a>
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Reporte Ejecutivo</h6>
-                                            </div>
-                                            <label>Cargado el 22 Dic</label>
-                                        </a>
-                                    </nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="menu-area">
-                            <article class="no-padding medium-width">
-                                <div class="no-padding" style="background: #b2ddfe;">
-                                    <div class="row padding"
-                                        style="color:rgb(0, 0, 0); background: white; border-radius: .75rem .75rem 0 0;">
-                                        <i class="icon-header">apartment</i>
-                                        <div><b>Infraestructura</b>
-                                            <div style="color: #7474745e">Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max padding" style="padding-top:0 !important;">
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Diagnóstico y brecha</h6>
-                                            </div>
-                                            <label>Cargado el 11 Dic</label>
-                                        </a>
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Archivo USE 2024</h6>
-                                            </div>
-                                            <label>Cargado el 2 Dic</label>
-                                        </a>
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">BI Aprendizaje</h6>
-                                            </div>
-                                            <label>Cargado el 2 Dic</label>
-                                        </a>
-                                    </nav>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="menu-area">
-                            <article class="no-padding medium-width">
-                                <div class="no-padding" style="background: #b2ddfe;">
-                                    <div class="row padding"
-                                        style="color:rgb(0, 0, 0); background: white; border-radius: .75rem .75rem 0 0;">
-                                        <i class="icon-header">paid</i>
-                                        <div><b>Presupuesto y Compromisos</b>
-                                            <div style="color: #7474745e">Gestión</div>
-                                        </div>
-                                    </div>
-                                    <nav class="drawer max padding" style="padding-top:0 !important;">
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Ejecución Presupues..</h6>
-                                            </div>
-                                            <label>Cargado el 11 Dic</label>
-                                        </a>
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Gestión de Riesg..</h6>
-                                            </div>
-                                            <label>Cargado el 2 Dic</label>
-                                        </a>
-                                        <a class="small-round" href="./ver.html">
-                                            <i>collections_bookmark</i>
-                                            <div class="max">
-                                                <h6 class="small">Gestión de Riesgo</h6>
-                                            </div>
-                                            <label>Cargado el 2 Dic</label>
-                                        </a>
-                                    </nav>
-                                </div>
-                            </article>
-                        </div>
-                        
-                    </div>
-                </dialog>
-                <!--FIN MODAL GESTIÓN-->
+                
                 <!--INICIO MODAL a-->
                 <div class="overlay"></div>
                 <dialog class="area-de-modulos" id="modulo-educacion">
@@ -1475,7 +1198,7 @@
                     </nav>
                 </dialog>
                 <!--CONTENT-->
-                <div class="page right active">
+                <div class="page right active" style="left:120;">
                     
                     <section class="responsive page left active">
                         
@@ -1487,13 +1210,13 @@
                             </div>
                             <div class="navegacion" id="navegacion">
                                 <div class="vista-previa activo" data-indice="0">
-                                    <img src="./images/1.jpg" alt="Vista previa 1">
+                                    
                                 </div>
                                 <div class="vista-previa" data-indice="1">
-                                    <img src="./images/2.jpg" alt="Vista previa 2">
+                                    
                                 </div>
                                 <div class="vista-previa" data-indice="2">
-                                    <img src="./images/3.jpg" alt="Vista previa 3">
+
                                 </div>
                             </div>
                         </div>
@@ -1502,19 +1225,22 @@
                         width: 100%;
                         position: relative;
                         overflow: hidden;
-                        border-radius: 3vh;
+                        border-radius: 0 !important;
                         }
 
                         .galeria {
                         display: flex;
                         transition: transform 0.5s ease;
                         height: 30vh;
+                        border-radius: 0 !important;
+                        
                         }
 
                         .imagen-galeria {
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
+                        object-fit: contain;
+                        border-radius: 0 !important;
                         }
 
                         .navegacion {
@@ -1525,13 +1251,14 @@
                         }
 
                         .vista-previa {
-                        width: 60px;
-                        height: 60px;
+                        width: 10px;
+                        height: 10px;
                         margin: 0 5px;
                         cursor: pointer;
                         border: 2px solid transparent;
                         transition: border 0.3s;
-                        border-radius: 0;
+                        border-radius: 50%;
+                        background: white;
                         }
 
                         .vista-previa.activo {
@@ -1545,138 +1272,125 @@
                         }
                         </style>
                         
-                        <!--<div class="carousel">
-                            <div class="carousel-images">
-                                <img src="./images/1.jpg" alt="Imagen 3">
-                                <img src="./images/2.jpg" alt="Imagen 4">
-                                <img src="./images/3.jpg" alt="Imagen 3">
-                            </div>
-                            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-                            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
-                        </div>-->
-                        <div class="area-buscar" style="display: flex;justify-content: center; align-self: center;">
-                            <div class="field large prefix round fill active" style="width: 50vh; margin-block-end: 0 !important;">
-                                <i class="front">search</i>
-                                <input placeholder="¿Qué estas buscando?">
-                                <menu class="min">
-                                    <div class="field large prefix suffix no-margin fixed">
-                                        <i class="front">arrow_back</i>
-                                        <input>
-                                        <i class="front">close</i>
-                                    </div>
-                                    <a class="row" href="./ver.html">
-                                        <i>history</i>
-                                        <div>PEM Formación 2021</div>
-                                    </a>
-                                    <a class="row" href="./ver.html">
-                                        <i>history</i>
-                                        <div>FOrmación CBD - 2021</div>
-                                    </a>
-                                    <a class="row" href="./ver.html">
-                                        <i>history</i>
-                                        <div>Formación 2022</div>
-                                    </a>
-                                </menu>
-                            </div>
-                        </div>
-                        
-                        <!--<article class="no-elevate round no-padding large page bottom active" style="height:20vh;">
-                            <img class="responsive" src="./images/SIDIPORTADA.webp">
-                            <div class="absolute middle center center-align black-text">
-                                <h1 class="center-align">SIDI</h1>
-                                <h6>Template</h6>
-                                <nav class="center-align"><button class="extra">Get started</button></nav>
-                            </div>
-                        </article>-->
-                        <h6 style="margin-top: 0 !important;">Visitados recientemente</h6>
+                        <div class="space"></div>
+                        <h6 class="gugi-regular"style="margin-top: 0 !important;">Visitados recientemente</h6>
                         
                         <div class="grid">
 
                             
                             
                             <div class="s6 m6 l3">
-                                <a class="wave round wrap sombra-2" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/cursosnodoce.png" style="height:10vh">
-                                        <div class="large-padding" style="padding: 1vh !important;">
-                                            <h6 class="recortar-texto titulo-grafica">Cursos No Docentes 2022</h6>
+                                <a class="round wrap sombra-2" href="./ver.html">
+                                    <article class="round no-elevate no-padding" style="border-radius:2vh !important;">
+                                        <img class="responsive medium sombra-1" src="./images/cursosnodoce.png" style="height:10vh; border-radius: 2vh 2vh 0 0;">
+                                        <div class="large-padding" style="padding: 1vh !important;border-radius: 2vh;">
+                                            <h6 class="recortar-texto titulo-grafica" style="font-weight: 700;">Cursos No Docentes 2022</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
                             </div>
                             <div class="s6 m6 l3">
-                                <a class="wave round wrap sombra-2" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/webinars2021.png" style="height:10vh">
-                                        <div class="large-padding" style="padding: 1vh !important;">
-                                            <h6 class="recortar-texto titulo-grafica">Webinars 2021</h6>
+                                <a class=" round wrap sombra-2" href="./ver.html">
+                                    <article class="round no-elevate no-padding" style="border-radius:2vh !important;">
+                                        <img class="responsive medium sombra-1" src="./images/webinars2021.png" style="height:10vh; border-radius: 2vh 2vh 0 0;">
+                                        <div class="large-padding" style="padding: 1vh !important; border-radius: 2vh;">
+                                            <h6 class="recortar-texto titulo-grafica "style="font-weight: 700;">Webinars 2021</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
                             </div>
                             <div class="s6 m6 l3">
-                                <a class="wave round wrap sombra-2" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/cursosprogramas2021.png" style="height:10vh">
-                                        <div class="large-padding" style="padding: 1vh !important;">
-                                            <h6 class="recortar-texto titulo-grafica">Cursos/Programas</h6>
+                                <a class=" round wrap sombra-2" href="./ver.html">
+                                    <article class="round no-elevate no-padding" style="border-radius:2vh !important;">
+                                        <img class="responsive medium sombra-1" src="./images/cursosprogramas2021.png" style="height:10vh; border-radius: 2vh 2vh 0 0;">
+                                        <div class="large-padding" style="padding: 1vh !important; border-radius: 2vh;">
+                                            <h6 class="recortar-texto titulo-grafica" style="font-weight: 700;">Cursos/Programas</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
                             </div>
                             <div class="s6 m6 l3">
-                                <a class="wave round wrap sombra-2" href="./ver.html">
-                                    <article class="round no-elevate no-padding">
-                                        <img class="responsive medium sombra-1" src="./images/FORMACIONCBD.png" style="height:10vh">
-                                        <div class="large-padding" style="padding: 1vh !important;">
-                                            <h6 class="recortar-texto titulo-grafica">Formación CBD 2021</h6>
+                                <a class=" round wrap sombra-2" href="./ver.html">
+                                    <article class="round no-elevate no-padding" style="border-radius:2vh !important;">
+                                        <img class="responsive medium sombra-1" src="./images/FORMACIONCBD.png" style="height:10vh; border-radius: 2vh 2vh 0 0;">
+                                        <div class="large-padding" style="padding: 1vh !important; border-radius: 2vh;">
+                                            <h6 class="recortar-texto titulo-grafica" style="font-weight: 700;">Formación CBD 2021</h6>
                                             <p class="recortar-texto descripcion-grafica">Acciones Formativas</p>
                                         </div>
                                     </article>
                                 </a>
                             </div>
                         </div>
-                        
-                        <h6>Enlaces externos</h6>
+                        <div class="space"></div>
+                        <h6 class="gugi-regular">Enlaces externos</h6>
                         
                         <div class="grid">
                             
                             <div class="s6 m6 l2">
-                                <a class="" href="">
-                                    <article class="no-padding" style="height:10vh;">
-                                        <img src="./images/SiseVe.jpg" alt="" style="height:10vh">
-                                    </article>
+                               <a class="" href="">
+                                    
+                                
+                                <article class="no-padding">
+                                    <img class="responsive small" src="./images/SiseVe.jpg">
+                                    <div class="padding">
+                                      <p style="font-size: 1vh; line-height: normal;">Es una plataforma del MINEDU para reportar, monitorear y atender denuncias de violencia escolar, promoviendo entornos educativos seguros.</p>
+                                    </div>
+                                  </article>
+                                </a>
+                            </div>
+                            <div class="s6 m6 l2">
+                                <a href="">
+                                    <article class="no-padding">
+                                        <img class="responsive small" src="./images/SIGIED.jpg">
+                                        <div class="padding">
+                                          <p style="font-size: 1vh; line-height: normal;">Es un sistema del MINEDU que gestiona información educativa para monitorear, evaluar y mejorar la calidad del servicio en las instituciones escolares.</p>
+                                        </div>
+                                      </article>
+                                </a>
+                            </div>
+                            <div class="s6 m6 l2">
+                                <a href="">
+                                    <article class="no-padding">
+                                        <img class="responsive small" src="./images/pronoei.jpg">
+                                        <div class="padding">
+                                          <p style="font-size: 1vh; line-height: normal;">Es un programa que brinda educación inicial en zonas rurales y comunidades con acceso limitado, promoviendo el desarrollo infantil temprano.</p>
+                                        </div>
+                                      </article>
                                 </a>
                             </div>
                             <div class="s6 m6 l2">
                                 <a class="" href="">
                                     <article class="no-padding">
-                                        <img src="./images/SIGIED.jpg" alt="" style="height:10vh">
-                                    </article>
+                                        <img class="responsive small" src="./images/Sigma.jpg">
+                                        <div class="padding">
+                                          <p style="font-size: 1vh; line-height: normal;">Es un sistema del MINEDU que optimiza la gestión administrativa y financiera en las instituciones educativas, mejorando su eficiencias.</p>
+                                        </div>
+                                      </article>
+                                </a>
+                            </div>
+                            <div class="s6 m6 l2">
+                                
+                                <a class="" href="">
+                                    <article class="no-padding">
+                                        <img class="responsive small" src="./images/EducacionAmbiental.jpg">
+                                        <div class="padding">
+                                          <p style="font-size: 1vh; line-height: normal;">Es una estrategia del MINEDU que fomenta la educación ambiental en escuelas para formar ciudadanos responsables y sostenibles.</p>
+                                        </div>
+                                      </article>
                                 </a>
                             </div>
                             <div class="s6 m6 l2">
                                 <a class="" href="">
+                                    
                                     <article class="no-padding">
-                                        <img src="./images/Sigma.jpg" alt="" style="height:10vh">
-                                    </article>
-                                </a>
-                            </div>
-                            <div class="s6 m6 l2">
-                                <a class="" href="">
-                                    <article class="no-padding">
-                                        <img src="./images/EducacionAmbiental.jpg" alt="" style="height:10vh">
-                                    </article>
-                                </a>
-                            </div>
-                            <div class="s6 m6 l2">
-                                <a class="" href="">
-                                    <article class="no-padding">
-                                        <img src="./images/ESCALE.jpg" alt="" style="height:10vh">
-                                    </article>
+                                        <img class="responsive small" src="./images/ESCALE.jpg">
+                                        <div class="padding">
+                                          <p style="font-size: 1vh; line-height: normal;">Es una estrategia del MINEDU para generar, analizar y difundir datos educativos que apoyen la toma de decisiones basadas en evidencia.</p>
+                                        </div>
+                                      </article>
                                 </a>
                             </div>
                             
@@ -1728,7 +1442,7 @@
     }
 
     .button:disabled {
-      background-color: #ccc;
+      background-color: WWW#ccc;
       cursor: not-allowed;
     }
 
@@ -1736,46 +1450,6 @@
       background-color: #6c757d;
     }
     </style>
-    <div id="modal" class="modal active" style="z-index: 1000000;">
-      <div id="step-1" class="modal-step active">
-            <div class="img-wizard" style="height:50vh;">
-                <img src="./images/bienvenida.jpg" alt="" style="height:50vh;">
-            </div>
-            <button class="button" onclick="goToStep(2)">Siguiente</button>
-        </div>
-        <div id="step-2" class="modal-step">
-            <div class="img-wizard" style="height:50vh;">
-                <img src="./images/sidisitemap.jpg" alt="" style="height:50vh;" class="zoomable">
-            </div>
-            <button class="button secondary" onclick="goToStep(1)">Anterior</button>
-            <button class="button" onclick="closeModal()">Finalizar</button>
-        </div>
-        <style>
-            .zoomable {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease;
-  
-}
-.img-wizard{
-    position: relative;
-    overflow: hidden;
-}
-.img-wizard:hover .zoomable {
-  transform: scale(1.5);
-}
-        </style>
-    </div>
-    <script>
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-        }
-
-        function goToStep(step) {
-            document.querySelectorAll('.modal-step').forEach(el => el.classList.remove('active'));
-            document.getElementById(`step-${step}`).classList.add('active');
-        }
-    </script>
     <script src="/__/firebase/8.2.9/firebase-app.js"></script>
     <script src="/__/firebase/8.2.9/firebase-analytics.js"></script>
     <script src="/__/firebase/init.js"></script>
@@ -1851,6 +1525,33 @@
     sidebarBtn.addEventListener("click", () => {
     sidebar.classList.toggle("close");
     });
+  </script>
+
+  <!-- Botón flotante -->
+  <div class="floating-button" id="floatingButton"><i>notifications</i></div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+      <button class="close-popup" id="closePopup">&times;</button>
+      <h2>Bienvenido</h2>
+      <p>Gracias por visitar nuestra página. ¡Esperamos que disfrutes tu experiencia!</p>
+  </div>
+
+  <script>
+      // Obtener elementos del DOM
+      const floatingButton = document.getElementById('floatingButton');
+      const popup = document.getElementById('popup');
+      const closePopup = document.getElementById('closePopup');
+
+      // Alternar visibilidad del popup al hacer clic en el botón flotante
+      floatingButton.addEventListener('click', () => {
+          popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Cerrar popup al hacer clic en la "X"
+      closePopup.addEventListener('click', () => {
+          popup.style.display = 'none';
+      });
   </script>
 
 </body>
