@@ -17,8 +17,8 @@
     <link rel="apple-touch-icon" href="/favicon.png">
     <link href="./css/modulos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Tilt+Neon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
@@ -618,7 +618,7 @@ height: 3vh;
                 <button class="circle large transparent" data-ui="#dialog-buscar"><i>search</i></button>
                
                 
-
+                <button class="circle large transparent" data-ui="#notificaciones"><i>notifications</i></button>  
                
                 
                 <button class="circle large transparent" data-ui="#menu-user">
@@ -1179,21 +1179,51 @@ height: 3vh;
     });
   </script>
 
-  <!-- Botón flotante -->
-  <div class="floating-button" id="floatingButton"><i>notifications</i></div>
-
-  <!-- Popup -->
-  <div class="popup" id="popup">
-      <button class="close-popup" id="closePopup">&times;</button>
-  
-        <div class="more" style="height:7vh; width:auto; border-radius: 2vh; padding: 1vh; background: #b2ddfe; margin-top:1vh">
-            <h2>Bienvenido</h2>
-      <p>Gracias por visitar nuestra página. ¡Esperamos que disfrutes tu experiencia!</p>
-        </div>
-        <div class="more" style="height:7vh; width:auto; border-radius: 2vh; padding: 1vh; background: #b2ddfe; margin-top: 1vh;">
-            Se ha actualizado Cursos No Docentes 2021
-        </div>
-    </div>
+  <dialog class="right" id="notificaciones">
+    <h5>Notificaciones</h5>
+    <div>SIDI v.1.1</div>
+    
+    <a class="row padding surface-container" style="margin-top: 1vh;">
+      <i>warning</i>
+      <div class="max">
+        <h6 class="small">Nueva Actualización</h6>
+        <div>Se ha mejorado la Interfaz SIDI v 1.0</div>
+      </div>
+      <label>+15 min</label>
+    </a>
+    <a class="row padding surface-container" style="margin-top: 1vh;">
+      <i>signal_cellular_alt</i>
+      <div class="max">
+        <h6 class="small">Nuevo BI</h6>
+        <div>Se ha mejorado la Interfaz SIDI v 1.0</div>
+      </div>
+      <label>+15 min</label>
+    </a>
+    <a class="row padding surface-container" style="margin-top: 1vh;">
+      <i>warning</i>
+      <div class="max">
+        <h6 class="small">Nueva Actualización</h6>
+        <div>Se ha mejorado la Interfaz SIDI v 1.0</div>
+      </div>
+      <label>+15 min</label>
+    </a>
+    <a class="row padding surface-container" style="margin-top: 1vh;">
+      <i>warning</i>
+      <div class="max">
+        <h6 class="small">Nueva Actualización</h6>
+        <div>Se ha mejorado la Interfaz SIDI v 1.0</div>
+      </div>
+      <label>+15 min</label>
+    </a>
+    <a class="row padding surface-container" style="margin-top: 1vh;">
+      <i>warning</i>
+      <div class="max">
+        <h6 class="small">Nueva Actualización</h6>
+        <div>Se ha mejorado la Interfaz SIDI v 1.0</div>
+      </div>
+      <label>+15 min</label>
+    </a>
+  </dialog>
   
 
   <script>
