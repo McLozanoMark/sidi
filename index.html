@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenido a Sidi</title>
   <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="./css/sidi.css" rel="stylesheet">
-<script type="module" src="./js/sidi.js"></script>
-<script type="module" src="./js/sidi-dynamic-colors.js"></script>
+<!--<link rel="stylesheet" href="./css/sidi.css" rel="stylesheet">
+<script type="module" src="./js/sidi.js"></script>-->
+<!--<script type="module" src="./js/sidi-dynamic-colors.js"></script>-->
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.css" rel="stylesheet">
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.js"></script>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   <style>
     /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
@@ -87,7 +92,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 4vh;;
 }
 .button-animation{
     display: flex;
@@ -179,10 +183,12 @@ a {
 <body>
   <div class="container">
     <div class="minedu_logo">
-        <img src="./images/minedu.webp" style="height:8vh;" alt="">
+        <img src="./images/MineduLogo.svg" style="height:8vh;" alt="">
     </div>
     <div class="log">
     <h5 class="nombre">Bienvenido a <img src="./images/logo_sidi_w.png"></h5>
+    <p style="margin: 0;">El Sistema Integrado De Información del MINEDU</p>
+    <div class="space"></div>
     <a class="box__link button-animation" href="./start.html">
         Ingresar
         <span></span>
@@ -190,29 +196,26 @@ a {
         <span></span>
         <span></span>
     </a>
+    <div class="space"></div>
+    <div class="areacuenta" style="display: flex; justify-content:space-between; align-items: center;align-self: center; width: 35vh;">
+      <button style="font-size: 1.3vh; color: white;margin-top: 0 !important; background: transparent;" data-ui="#crearcuenta">Crear Cuenta</button>
+      <button style="font-size: 1.3vh; color: white;margin-top: 0 !important; background: transparent;">¿Olvidaste tu contraseña?</button>
+    </div>
 </div>
     <div class="version">
         <p style="font-size:1.5vh !important;">SIDI v1.2 - Sistema Integrado de Información</p>
     </div>
   </div>
-  <!-- Botón flotante -->
-  <!--<div class="boton-flotante" id="botonAbrir">?
-</div>-->
+  
 
-<!-- Ventana flotante -->
-<!--<div class="ventana-consulta" id="ventanaConsulta">
-    <header>Consulta en tiempo real</header>
-    <div class="contenido">
-        <div class="field border label max">
-            <input>
-            <label>Escribe tu consulta</label>
-          </div>
-          <button class="responsive">
-            <i>send</i>
-            <span>Enviar</span>
-          </button>
-    </div>
-</div>-->
+  <dialog id="crearcuenta">
+    <h5>Crear tu cuenta</h5>
+    <p>Escríbenos al correo <a href="mailto:sidi@minedu.gob.pe?subject=Consulta importante&body=Hola, necesito información sobre...">sidi@minedu.gob.pe</a> o llámanos al 01-6155800 anexo 26236 para ayudarte con el proceso de generación de cuenta</p>
+    <nav>
+      <button data-ui="#crearcuenta">Enviar correo</button>
+    </nav>
+  </dialog>
+  
 
 <script>
     // Manejo del botón y la ventana

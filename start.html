@@ -174,7 +174,7 @@
 
     .sidebar1 .nav-links li a .link_name {
       font-size: 13px;
-      font-weight: 400;
+      font-weight: 700;
       color: #2c4da7;
       transition: all 0.4s ease;
       line-height: normal;
@@ -243,10 +243,18 @@
       box-shadow: var(--elevate1);
     }
 
+    .sidebar1 .nav-links li .sub-menu li a.bigraphics:active{
+      /*background: #2c4da7; */
+      background: #b2ddfe;
+      height: 7vh;
+      
+    }
+
     .sidebar1.close .nav-links li .sub-menu a.bigraphics {
       width: 30vh;
       height: 5vh;
-      background: #b2ddfe;
+      /*background: #b2ddfe;*/
+      background: white;
       display: flex !important;
       align-self: center !important;
       justify-content: left !important;
@@ -258,7 +266,7 @@
     .sidebar1 .nav-links li .sub-menu li a.bigraphics {
       width: 30vh;
       height: 5vh;
-      background: #b2ddfe;
+      background: white;
       display: flex !important;
       align-self: center !important;
       justify-content: left !important;
@@ -271,6 +279,10 @@
     }
 
     .sidebar1.close .nav-links li .sub-menu li a:hover {
+      background: #a2c9e7;
+
+    }
+    .sidebar1 .nav-links li .sub-menu li a:hover {
       background: #a2c9e7;
 
     }
@@ -426,6 +438,93 @@
         display: none;
       }
     }
+
+    .notification-card {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            min-height: 9vh;
+            border-radius: 1vh;
+            background-color: #eef8fe;
+            padding: 1vh 2vh;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            margin-top: 1vh;
+        }
+
+        .notification-card.hidden {
+            opacity: 0;
+            transform: translateY(-20px);
+            pointer-events: none;
+            display: none;
+        }
+
+        .notification-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4vh;
+            height: 4vh;
+            background-color: #ffffff;
+            border-radius: 50%;
+            font-size: 2vh;
+            color: black;
+            font-weight: bold;
+            margin-right: 1vh;
+            
+        }
+
+        .notification-content {
+            flex-grow: 1;
+        }
+
+        .notification-title {
+            font-size: 1.3vh;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+
+        .notification-description {
+            font-size: 1.2vh;
+            margin: 0;
+            color: #666;
+        }
+
+        .notification-time {
+            font-size: 1.2vh;
+            color: #999;
+        }
+
+        .notification-card > .close-button {
+            position: absolute;
+            top: 1vh;
+            right: -1.3vh;
+            background: none;
+            border: none;
+            font-size: 2vh;
+            color: #999;
+            cursor: pointer;
+            font-weight: bold;
+            width: 1vh !important;
+            height: 1vh;
+            padding:0 !important;
+        }
+
+        .notification-card > .close-button:hover {
+            color: #333;
+            background-image: none !important;
+            box-shadow: none !important;
+        }
+        .notification-card > .close-button:after {
+            color: #333;
+            background-image: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+
   </style>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -458,12 +557,12 @@
           <i class='bx bxl-c-plus-plus'></i>
           <span class="logo_name">CodingLab</span>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links" style="height:50%;">
           <li>
             <div class="iocn-link">
               <a href="#">
                 <i class='bx bxs-user'></i>
-                <span class="link_name">Alta Dirección</span>
+                <span class="link_name">Ayuda</span>
                 <div class="badge min"></div>
               </a>
               <i class='bx bxs-chevron-down arrow'></i>
@@ -655,6 +754,25 @@
             </ul>
           </li>
         </ul>
+        <ul class="nav-links">
+          <li>
+            <div class="iocn-link">
+              <a href="#">
+                <i class='bx bxs-user'></i>
+                <span class="link_name">¿Qué es el SIDI?</span>
+                <div class="badge min"></div>
+              </a>
+              <!--<i class='bx bxs-chevron-down arrow'></i>-->
+            </div>
+            <!--<ul class="sub-menu">
+              <li><a class="link_name"href="">Ayuda</a></li>
+              <li><a class="bigraphics" href="#"><img src="images/powerbi48px.png">Ejecutivo</a></li>
+              <li><a class="bigraphics" href="#"><img src="images/powerbi48px.png">Seguimiento IBAE 2024</a>
+                <div class="badge border no-round" style="    margin-left: 9vh;">Nuevo</div>
+              </li>
+            </ul>-->
+          </li>
+        </ul>
       </div>
       <nav class="top sombra-1 azul-gesi">
        
@@ -663,6 +781,7 @@
           <img src="./images/logo_sidi_w.png" style="display: none;">
           <img src="images/logo_sidi_w.png">
         </a>
+        <p>El sistema Integrado De Información del MINEDU</p>
         <div class="max"></div>
         <div class="max"></div>
         <button class="circle large transparent" data-ui="#buscador"><i>search</i></button>
@@ -761,7 +880,7 @@
             </style>
 
             <div class="space"></div>
-            <h6 class="tilt-neon" style="margin-top: 0 !important;">Visitados recientemente</h6>
+            <h6 class="tilt-neon" style="margin-top: 0 !important;">Tus últimas visitas</h6>
 
             <div class="grid">
               <div class="s6 m6 l3">
@@ -896,10 +1015,10 @@
         </div>
         
       </main>
-      <div class="row large-space wrap" style="display: flex; justify-content: center; background: white; height: 7vh; align-items: center; align-self: center; width: 100%;">
-        <img src="./images/minedu.webp" alt="" style="height: 5vh !important;">
-        <div class="AREASDA"><p style="padding: 0 !important; margin: 0 !important;">2025 - Todos los derechos reservados. Ministerio de Educación - SIDI - Versión 2.1.0 </p>
-          <a href="#">Correo electrónico: sidi@minedu.gob.pe</a>
+      <div class="row large-space wrap sombra-2" style="position:fixed;display: flex; justify-content: center; background: white; height: 7vh; align-items: center; align-self: center; width: 100%; bottom:0;">
+        <img src="./images/MineduLogo.svg" alt="" style="height: 5vh !important;">
+        <div class="AREASDA" style="color:grey;"><p style="padding: 0 !important; margin: 0 !important;">2025 - Todos los derechos reservados. Ministerio de Educación - SIDI - Versión 2.1.0 </p>
+          <a href="#">Consultas: sidi@minedu.gob.pe o llámanos al 01-6155800 anexo 26236</a>
         </div>
       </div>
     </div>
@@ -1043,10 +1162,86 @@
   });
   </script>
 
-  <dialog class="right" id="notificaciones" style="background: white;">
+  <dialog class="right" id="notificaciones" style="background: white; border-radius: 0;">
     <h5 class="tilt-neon">Notificaciones</h5>
     <!--<div>SIDI v.1.1</div>-->
-
+    <div class="notification-card">
+      <button class="close-button" onclick="closeNotification(this)">&times;</button>
+      <div class="notification-icon">!</div>
+      <div class="notification-content">
+          <p class="notification-title">Nueva Actualización</p>
+          <p class="notification-description">Se ha mejorado la Interfaz SIDI v 1.0</p>
+      </div>
+      <div class="notification-time">+15 min</div>
+  </div>
+  
+  
+  <div class="notification-card">
+      <button class="close-button" onclick="closeNotification(this)">&times;</button>
+      <div class="notification-icon">!</div>
+      <div class="notification-content">
+          <p class="notification-title">Mantenimiento Programado</p>
+          <p class="notification-description">El sistema estará en mantenimiento esta noche.</p>
+      </div>
+      <div class="notification-time">+30 min</div>
+  </div>
+  
+  <div class="notification-card">
+      <button class="close-button" onclick="closeNotification(this)">&times;</button>
+      <div class="notification-icon">!</div>
+      <div class="notification-content">
+          <p class="notification-title">Nueva Funcionalidad</p>
+          <p class="notification-description">Se ha añadido soporte para múltiples idiomas.</p>
+      </div>
+      <div class="notification-time">+1 hora</div>
+  </div>
+  
+  <div class="notification-card">
+      <button class="close-button" onclick="closeNotification(this)">&times;</button>
+      <div class="notification-icon">!</div>
+      <div class="notification-content">
+          <p class="notification-title">Actualización de Seguridad</p>
+          <p class="notification-description">Por favor, actualice su contraseña.</p>
+      </div>
+      <div class="notification-time">+2 horas</div>
+  </div>
+  
+  <div class="notification-card">
+      <button class="close-button" onclick="closeNotification(this)">&times;</button>
+      <div class="notification-icon">!</div>
+      <div class="notification-content">
+          <p class="notification-title">Reinicio del Servidor</p>
+          <p class="notification-description">El servidor se reiniciará a medianoche.</p>
+      </div>
+      <div class="notification-time">+3 horas</div>
+  </div>
+  
+  <div class="notification-card">
+      <button class="close-button" onclick="closeNotification(this)">&times;</button>
+      <div class="notification-icon">!</div>
+      <div class="notification-content">
+          <p class="notification-title">Evento Especial</p>
+          <p class="notification-description">Participe en el seminario web mañana.</p>
+      </div>
+      <div class="notification-time">+6 horas</div>
+  </div>
+  
+  <div class="notification-card">
+      <button class="close-button" onclick="closeNotification(this)">&times;</button>
+      <div class="notification-icon">!</div>
+      <div class="notification-content">
+          <p class="notification-title">Recordatorio</p>
+          <p class="notification-description">No olvide revisar el reporte semanal.</p>
+      </div>
+      <div class="notification-time">+1 día</div>
+  </div>
+  <script>
+    function closeNotification(button) {
+        const notification = button.parentElement;
+        notification.classList.add('hidden');
+    }
+</script>
+<!--
     <a class="row padding " style="margin-top: 1vh;background: #eff4f7; border-radius: 1vh;">
       <i>warning</i>
       <div class="max">
@@ -1088,7 +1283,7 @@
       <label>+15 min</label>
     </a>
   </dialog>
-
+-->
 
   <script>
     // Obtener elementos del DOM
